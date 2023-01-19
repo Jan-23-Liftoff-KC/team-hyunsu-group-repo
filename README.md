@@ -1,4 +1,5 @@
 # Project Outline
+=======
 ### Overview
 Health eHub application is intended to fill a noticeable gap in medical information.  While there are many provider-centric portal applications in health care, only one patient-based application from 10 years ago could be located. Multiple groups have the potential to benefit from this app:
 * Large communities that have multiple proprietary provider portals and benefit from having a single point of data,
