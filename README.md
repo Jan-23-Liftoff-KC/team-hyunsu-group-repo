@@ -25,4 +25,10 @@ The intended use for Health eHub is not to compete with provider portals but enh
 * CSS 3
 * Hibernate 6.1.4
 * MySQL 8.0
-* External Connection API
+
+### Collaborators
+* Christine Dillon(@cadillon1)
+* Glapougbae Garmondeh (@ggarmondeh)
+* Katie Merritt (@launchKat)
+* Kit Pyles (@KitPyles)
+* Deepti Trivedi (@deepti-tri)
