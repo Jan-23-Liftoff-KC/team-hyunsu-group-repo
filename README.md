@@ -38,5 +38,9 @@ The intended use for Health eHub is not to compete with provider portals but enh
 * Responsive Web Design
 * User authentication & authorization
 
-### Project Tracker
-[Trello](https://trello.com/b/fjtRsSmY/liftoff)
+### Collaborators
+* Christine Dillon(@cadillon1)
+* Glapougbae Garmondeh (@ggarmondeh)
+* Katie Merritt (@launchKat)
+* Kit Pyles (@KitPyles)
+* Deepti Trivedi (@deepti-tri)
