@@ -27,8 +27,8 @@ The intended use for Health eHub is not to compete with provider portals but enh
 * MySQL 8.0
 
 ### Collaborators
-* Christine Dillon(@cadillon1)
-* Glapougbae Garmondeh (@ggarmondeh)
-* Katie Merritt (@launchKat)
-* Kit Pyles (@KitPyles)
-* Deepti Trivedi (@deepti-tri)
+* Christine Dillon([@cadillon1](https://github.com/cadillon1))
+* Glapougbae Garmondeh ([@ggarmondeh](https://github.com/ggarmondeh))
+* Katie Merritt ([@launchKat](https://github.com/launchKat))
+* Kit Pyles ([@KitPyles](https://github.com/KitPyles))
+* Deepti Trivedi ([@deepti-tri](https://github.com/deepti-tri))
