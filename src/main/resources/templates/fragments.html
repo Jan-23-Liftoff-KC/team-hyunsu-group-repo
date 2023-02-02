@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+    <div th:fragment="header">
+        <table>
+            <tr>
+                <td>
+                    <img src="logo.png" alt="Health eHub logo showing two stylized people embracing each other. One with a lighter skin tone, one with a darker skin tone." height="200px">
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <h1>Health eHub</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2>For the Health of It!</h2>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div th:fragment="sidebar">
+        <p th:text ="'Hello, ' + ${user.getFirstName()}"></p>
+<!--Table entries to be updated as links as we build the appropriate views.-->
+        <table>
+            <tr><td>Dashboard</td></tr>
+            <tr><td>Allergies</td></tr>
+            <tr><td>Diagnoses</td></tr>
+            <tr><td>Hospitalizations</td></tr>
+            <tr><td>Immunizations</td></tr>
+            <tr><td>Medications</td></tr>
+            <tr><td>Pharmacy</td></tr>
+            <tr><td>Providers</td></tr>
+            <tr><td>Test Results</td></tr>
+            <tr><td>Vitals</td></tr>
+        </table>
+<!--More to be added for full Logout functionality later-->
+        <button>Logout</button>
+    </div>
+<!--More fragments will be added here.-->
+</body>
+</html>
