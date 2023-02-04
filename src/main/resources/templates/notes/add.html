@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Welcome to your Dashboard!</title>
+        <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <div th:replace="~{fragments :: header}"></div>
+        <div style="display: inline-block">
+            <div th:replace="~{fragments :: sidebar}"></div>
+            <div>
+                <table>
+                    <tr>
+                        <td class="top-align">
+                            <b>Demographics Data</b>
+                            <table>
+                                <tr>
+                                    <td th:text="${user.getFirstName()} + ' ' ${user.getLastName()}">FirstName LastName</td>
+                                </tr>
+                                <tr>
+                                    <td th:text="${user.getDob()}">MM/DD/YYY</td>
+                                </tr>
+                                <tr>
+                                    <td th:text="${user.getAddress()}">123 Street, City, ST zipcode</td>
+                                </tr>
+                                <tr>
+                                    <td th:text="${user.getEmail()}">email@website.com</td>
+                                <tr>
+                                     <td th:text="${user.getPhoneNumber()}">123-456-7890</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="top-align">
+                            <b>Notes</b>
+                            <form action="POST">
+                                <label th:for="content">Add Your Note:</label><br>
+                                <textarea th:field="${note.content}" rows="4" cols="50"></textarea><br>
+                                <input type="submit" value="Add Note">
+                            </form>
+                            <table th:each="note : ${notes}">
+                                <tr>
+                                    <td th:text="${note.date}">date</td>
+                                </tr>
+                                <tr>
+                                    <td th:text="${note.content}">content</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

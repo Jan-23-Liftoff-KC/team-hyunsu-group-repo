@@ -32,11 +32,15 @@
             </td>
             <td>
                 Notes
-                <form class="notes" method="POST" th:action="@{/addNote}" th:object="${notes}">
-                    <textarea class="notes" rows="25" cols="50"></textarea><br>
-<!--                    Add functionality to save Note. WHERE are we saving it?-->
-                    <button>Save Notes</button>
-                </form>
+                <table th:each="note : ${notes}">
+                    <tr>
+                        <td th:text="${note.date}">date</td>
+                    </tr>
+                    <tr>
+                        <td th:text="${note.content}">content</td>
+                    </tr>
+                </table>
+                <a href="notes/add.html"><button>Add Note</button></a>
             </td>
         </tr>
     </table>

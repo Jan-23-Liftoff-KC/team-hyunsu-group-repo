@@ -11,19 +11,20 @@ transform: translate(-50%, -50%);
 .password{
 margin-top: 10px;
 border-color: antiquewhite;
-
-
 }
+
 .create_user{
 text-align:center;
 margin-top:15px;
 border: none;
 }
+
 .button{
 display:flex;
 justify-content:center;
 margin:10px auto;
 }
+
 button{
 padding-top:10px;
 padding-bottom:10px;
@@ -34,6 +35,7 @@ border:none;
  background-color: #31316f;
  color:white;
 }
+
 input{
   width:200px;
   border: none;
@@ -45,4 +47,8 @@ input{
   padding-left: 15px;
   padding-right: 15px;
   border-radius:5px;
+  }
+
+  .top-align td {
+    vertical-align: top;
   }
