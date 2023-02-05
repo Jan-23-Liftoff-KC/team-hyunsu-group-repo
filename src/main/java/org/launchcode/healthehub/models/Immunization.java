@@ -28,9 +28,7 @@ public class Immunization {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    <-- There shouldn't be a setter method for the id. -->
 
     public String getName() {
         return Name;
