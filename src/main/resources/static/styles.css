@@ -46,3 +46,6 @@ input{
   padding-right: 15px;
   border-radius:5px;
   }
+  .inline-block {
+    display: inline-block;
+  }

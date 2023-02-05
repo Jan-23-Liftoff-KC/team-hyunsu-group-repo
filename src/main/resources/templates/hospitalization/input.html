@@ -7,83 +7,84 @@
 </head>
 <body>
     <div th:replace="${fragments :: header}"></div>
-<!--    Need a class to display body as "display:inline-block"-->
-    <div th:replace="${fragments :: sidebar}"></div>
-    <div>
-        <form method="POST">
-            <div class="buttons">
-                <div class="left">
-                    <button action="input.html" id="addAnother">Add Another</button>
+    <div style="display: inline-block">
+        <div th:replace="${fragments :: sidebar}"></div>
+        <div>
+            <form method="POST">
+                <div class="buttons">
+                    <div class="left">
+                        <button action="input.html" id="addAnother">Add Another</button>
+                    </div>
+                    <div class="right">
+                        <button action="view.html" id="save">Save</button>
+                    </div>
                 </div>
-                <div class="right">
-                    <button action="view.html" id="save">Save</button>
-                </div>
-            </div>
-            <table>
-                <tr>
-                    <table>
-                        <tr>
-                            <th>
-                                <label for="reason">Reason</label>
-                            </th>
-                            <th>
-                                <label for="facility">Facility</label>
-                            </th>
-                            <th>
-                                <label for="provider">Provider</label>
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" id="reason" size="33" placeholder="Reason" />
-                            </td>
-                            <td>
-                                <input type="text" id="facility" size="33" placeholder="Facility"/>
-                            </td>
-                            <td>
-                                <input type="text" id="provider" size="33" placeholder="Provider" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                <label for="treatment">Treatment</label>
-                            </th>
-                            <th>
-                                <label for="admitDate">Date of Admission</label>
-                            </th>
-                            <th>
-                                <label for="dischargeDate">Date of Discharge</label>
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" id="treatment" size="33" placeholder="Treatment" />
-                            </td>
-                            <td>
-                                <input type="text" id="admitDate" size="33" placeholder="Date of Admission"/>
-                            </td>
-                            <td>
-                                <input type="text" id="dischargeDate" size="33" placeholder="Date of Discharge" />
-                            </td>
-                        </tr>
-                    </table>
-                </tr>
-                <tr>
-                    <table>
-                        <tr>
-                            <th>
-                                <label for="notes">Notes</label>
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" id="notes" size="110" placeholder="Notes" />
-                            </td>
-                        </tr>
-                    </table>
-                </tr>
-            </table>
-        </form>
+                <table>
+                    <tr>
+                        <table>
+                            <tr>
+                                <th>
+                                    <label for="reason">Reason</label>
+                                </th>
+                                <th>
+                                    <label for="facility">Facility</label>
+                                </th>
+                                <th>
+                                    <label for="provider">Provider</label>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" id="reason" size="33" placeholder="Reason" />
+                                </td>
+                                <td>
+                                    <input type="text" id="facility" size="33" placeholder="Facility"/>
+                                </td>
+                                <td>
+                                    <input type="text" id="provider" size="33" placeholder="Provider" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="treatment">Treatment</label>
+                                </th>
+                                <th>
+                                    <label for="admitDate">Date of Admission</label>
+                                </th>
+                                <th>
+                                    <label for="dischargeDate">Date of Discharge</label>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" id="treatment" size="33" placeholder="Treatment" />
+                                </td>
+                                <td>
+                                    <input type="text" id="admitDate" size="33" placeholder="Date of Admission"/>
+                                </td>
+                                <td>
+                                    <input type="text" id="dischargeDate" size="33" placeholder="Date of Discharge" />
+                                </td>
+                            </tr>
+                        </table>
+                    </tr>
+                    <tr>
+                        <table>
+                            <tr>
+                                <th>
+                                    <label for="notes">Notes</label>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" id="notes" size="110" placeholder="Notes" />
+                                </td>
+                            </tr>
+                        </table>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 </body>
 </html>

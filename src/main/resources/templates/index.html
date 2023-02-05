@@ -1,42 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    <title>
-
-    </title>
-</head>
-<body>
-<header>
-    <nav>
-
-    </nav>
-</header>
-    <form>
-        <div class="user_name">
-            <label for="user_name" >
-                User Name:
-                <input placeholder="Enter User Name" id="user_name">
-            </label>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/css/styles.css}">
+        <title>Welcome to Health eHub!</title>
+    </head>
+    <body>
+        <div th:replace="${fragments :: header}"></div>
+        <div class="inline-block">
+            <div>
+                <h3>Welcome to Health eHub!</h3>
+                <h4>For the Health of It!</h4>
+                <p>Health eHub is a universal health record created for YOU! It's not a patient portal. It's not tied to a doctor's office or hospital. It's an app for you to gather all of <b>your</b> health information in one secure place, regardless of changing doctors, moving, or traveling.</p>
+                <p>Your health data is yours. And, we feel that you should have possession of it. So, please, login to the right to access your secure account. If you don't have an account yet, then <a th:href="${/registration.html}">Register Here.</a></p>
+            </div>
+            <div>
+                <form method="post" action="login">
+                    <div>
+                        <label th:for="username">Username: </label>
+                        <input type="text" placeholder="Email address" name="username">
+                    </div>
+                    <div>
+                        <label th:for="password">Password: </label>
+                        <input type="password" placeholder="Enter Password" name="password">
+                    </div>
+                    <button>Sign in</button>
+                </form>
+                <p>Not signed up yet? <a th:href="@{/registration.html}">Register Here.</a></p>
+            </div>
         </div>
-        <div class="password">
-            <label   for="password" >
-                Password:
-                <input placeholder="Enter Password" id="password">
-            </label>
-        </div>
-        <div class ="button">
-            <button>Sign in</button>
-        </div>
-
-        <div class="registration">
-             <p>
-                Not signed up yet?
-        <a href="create_user.html" target = "_blank">Register Here</a>
-             </p>
-        </div>
-
-    </form>
-</body>
+        <div th:replace="${fragments :: footer}"></div>
+    </body>
 </html>

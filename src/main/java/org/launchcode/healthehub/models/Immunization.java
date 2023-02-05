@@ -1,8 +1,12 @@
 package org.launchcode.healthehub.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 public class Immunization {
@@ -11,59 +15,50 @@ public class Immunization {
     public int id;
     
     @NotNull
-    private String Name;
+    private String name;
     
     @NotNull
-    private String Date;
-    private String Dosage;
-    private String Notes;
+    @DateTimeFormat(pattern = "mm/dd/yyyy")
+    private Date date;
+    private String dosage;
+    private String notes;
 
-    public Immunization(String name, String date, String dosage, String notes) {
-        this.Name = name;
-        this.Date = date;
-        this.Dosage = dosage;
-        this.Notes = notes;
-    }
-    public Immunization(){
-
-    }
+        public Immunization(){}
 
     public int getId() {
         return id;
     }
 
-// There shouldn't be a setter method for the id. //
-
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
-    public String getDate() {
-        return Date;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDate(String date) {
-        Date = date;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getDosage() {
-        return Dosage;
+        return dosage;
     }
 
     public void setDosage(String dosage) {
-        Dosage = dosage;
+        this.dosage = dosage;
     }
 
     public String getNotes() {
-        return Notes;
+        return notes;
     }
 
     public void setNotes(String notes) {
-        Notes = notes;
+        this.notes = notes;
     }
 }
 

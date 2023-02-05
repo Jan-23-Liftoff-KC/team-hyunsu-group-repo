@@ -7,23 +7,24 @@
 </head>
 <body>
     <div th:replace="${fragments :: header}"></div>
-<!--    Need to decide on a class to display sidebar & page content as display:inline-block.-->
-    <div th:replace="${fragments :: sidebar}"></div>
-    <div>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Dosage</th>
-                <th>Notes</th>
-            </tr>
-            <tr th:each="shot: ${shots}">
-                <td th:text="${shot.name}"></td>
-                <td th:text="${shot.date}"></td>
-                <td th:text="${shot.dosage}"></td>
-                <td th:text="${shot.notes}"></td>
-            </tr>
-        </table>
+    <div style="display: inline-block">
+        <div th:replace="${fragments :: sidebar}"></div>
+        <div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Dosage</th>
+                    <th>Notes</th>
+                </tr>
+                <tr th:each="shot: ${shots}">
+                    <td th:text="${shot.name}"></td>
+                    <td th:text="${shot.date}"></td>
+                    <td th:text="${shot.dosage}"></td>
+                    <td th:text="${shot.notes}"></td>
+                </tr>
+            </table>
+        </div>
     </div>
     <div th:replace="${fragments :: footer}"></div>
 </body>
