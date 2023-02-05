@@ -48,7 +48,6 @@ input{
   padding-right: 15px;
   border-radius:5px;
   }
-
-  .top-align td {
-    vertical-align: top;
+  .inline-block {
+    display: inline-block;
   }
