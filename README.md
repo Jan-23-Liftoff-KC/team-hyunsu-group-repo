@@ -7,7 +7,7 @@ Health eHub application is intended to fill a noticeable gap in medical informat
 * Travelers or digital nomads could benefit from an electronic single source of information.
 
 The intended use for Health eHub is not to compete with provider portals but enhance opportunities by driving patient engagement using this application as a tool to store medical data.
-
+ 
 ### Features
 * User Account Creation
 * User Login
