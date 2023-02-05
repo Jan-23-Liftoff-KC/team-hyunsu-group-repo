@@ -9,7 +9,11 @@ public class Immunization {
     @Id
     @GeneratedValue
     public int id;
+    
+    @NotNull
     private String Name;
+    
+    @NotNull
     private String Date;
     private String Dosage;
     private String Notes;
