@@ -31,4 +31,3 @@ The intended use for Health eHub is not to compete with provider portals but enh
 * Glapougbae Garmondeh ([@ggarmondeh](https://github.com/ggarmondeh))
 * Katie Merritt ([@launchKat](https://github.com/launchKat))
 * Kit Pyles ([@KitPyles](https://github.com/KitPyles))
-* Deepti Trivedi ([@deepti-tri](https://github.com/deepti-tri))
