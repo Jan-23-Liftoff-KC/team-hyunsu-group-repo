@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Welcome to your Dashboard!</title>
+        <link th:href="@{/css/styles.css}" rel="stylesheet" />
     </head>
     <body>
         <div th:replace="~{fragments :: header}"></div>
@@ -23,26 +24,29 @@
                     <tr>
                         <th style="text-align: right">Email: </th><td th:text="${user.getEmail()}">email@website.com</td>
                     <tr>
-                        <th style="text-align: right">Phone Number: </th><td th:text="${user.getPhoneNumber()}">123-456-7890</td>
+                    <th style="text-align: right">Phone Number: </th><td th:text="${user.getPhoneNumber()}">123-456-7890</td>
                     </tr>
                 </table>
-            </div>
-            <div>
-                <h3>Notes</h3>
-                <a href="notes/add.html"><button>Add Note</button></a>
-                <table class="zebra">
-                    <tr th:each="note : ${notes}">
-                        <table>
-                            <tr>
-                                <td th:text="${note.date}">date & time</td>
-                            </tr>
-                            <tr>
-                                <td th:text="${note.content}">content</td>
-                            </tr>
-                        </table>
-                    </tr>
-                </table>
-                <a href="notes/edit.html"><button>Edit Note</button></a>
+                <div>
+                    <h3>Notes</h3>
+                    <form action="POST">
+                        <label th:for="content">Add Your Note:</label><br>
+                        <textarea th:field="${note.content}" rows="4" cols="50"></textarea><br>
+                        <input type="submit" value="Add Note">
+                    </form>
+                    <table class="zebra">
+                        <tr th:each="note : ${notes}">
+                            <table>
+                                <tr>
+                                    <td th:text="${note.date}">date & time</td>
+                                </tr>
+                                <tr>
+                                    <td th:text="${note.content}">content</td>
+                                </tr>
+                            </table>
+                        </tr>
+                    </table>
+                 </div>
             </div>
         </div>
     </body>

@@ -1,63 +1,64 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www/thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title>User Registration Form</title>
-</head>
-<body>
-<div>
-    <h1>User Registration Form</h1>
-</div>
-<div class="first_name">
-    <label for="first_name" >
-        First Name:
-        <input placeholder="First name" id="first_name">
-    </label>
-</div>
-<div class="last_name">
-    <label   for="last_name" >
-        Last Name:
-        <input placeholder="Last name" id="last_name">
-    </label>
-</div>
-<div class="email">
-    <label for="email" >
-        Email:
-        <input placeholder="Enter email" id="email">
-    </label>
-</div>
-<div class="password">
-    <label   for="password" >
-        Password:
-        <input placeholder="Enter Password" id="password">
-    </label>
-<div class="verify_password" >
-    <label for="verify password">
-        Verify Password:
-        <input placeholder="Re-enter Password" id="verify_password">
-    </label>
-</div>
-<div class="address">
-    <label   for="address" >
-        Address:
-        <input placeholder="Enter address" id="address">
-    </label>
-</div>
-<div class="dateOfBirth">
-    <label   for="dateOfBirth" >
-        DOB:
-        <input placeholder="MM/DD/YYYY" id="dateOfBirth">
-    </label>
-</div>
-<div class="phoneNumber">
-    <label   for="phoneNumber" >
-        Phone:
-        <input placeholder="Enter Phone Number" id="phoneNumber">
-    </label>
-</div>
-<div class ="button">
-    <button>Create User</button>
-</div>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>User Registration Form</title>
+        <link th:href="styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>User Registration Form</h1>
+        <form method="post" th:object="${user}" enctype="utf8">
+            <div>
+                <label th:for="first_name">First Name: </label>
+                <input type="text" name="first_name" placeholder="First name" th:field="*{firstName}" />
+<!--            Removed until we implement Spring Security.
+                <p th:each="error: ${#fields.errors('firstName')}" th:text="${error}">Validation error</p>-->
+            </div>
+            <div>
+                <label th:for="last_name">Last Name: </label>
+                <input type="text" name="last_name" placeholder="Last name" th:field="*{lastName}" />
+<!--            Removed until we implement Spring Security.
+                <p th:each="error: ${#fields.errors('lastName')}" th:text="${error}">Validation error</p>-->
+            </div>
+            <div>
+                <label th:for="email">Email: </label>
+                <input type="email" name="email" placeholder="Enter email" th:field="*{email}" />
+<!--            Removed until we implement Spring Security.
+                <p th:each="error: ${#fields.errors('email')}" th:text="${error}">Validation error</p>-->
+            </div>
+            <div>
+                <label th:for="password">Password: </label>
+                <input type="password" name="password" placeholder="Enter Password" th:field="*{password}" />
+    <!--        Removed until we implement Spring Security.
+                <p th:each="error: ${#fields.errors('password')}" th:text="${error}">Validation error</p>-->
+            </div>
+            <div>
+                <label th:for="verifyPassword">Verify Password: </label>
+                <input type="password" name="verifyPassword" placeholder="Verify Password" th:field="${user.verifyPassword}" />
+            </div>
+            <div>
+                <label th:for="address">Address: </label>
+                <input type="text" name="address" placeholder="Enter address" th:field="*{address}">
+    <!--        Removed until we implement Spring Security.
+                <p th:each="error: ${#fields.errors('address')}" th:text="${error}">Validation error</p>-->
+            </div>
+            <div>
+                <label th:for="dob">DOB: </label>
+                <input type="date" name="dob" placeholder="MM/DD/YYYY" th:field="*{dob}">
+    <!--        Removed until we implement Spring Security.
+                <p th:each="error: ${#fields.errors('dob')}" th:text="${error}">Validation error</p>-->
+            </div>
+            <div>
+                <label th:for="phone">Phone: </label>
+                <input type="text" name="phone" placeholder="Enter Phone Number" th:field="*{phone}">
+    <!--            <p th:each="error: ${#fields.errors('phone')}" th:text="${error}">Validation error</p>-->
+            </div>
 
-</body>
+            <button type="submit" value="Create User" th:text="#{label.form.submit}">Create Account</button>
+        </form>
+        <div>
+            <p>Already registered? Click <a href="@{/index.html}">here</a> to login.</p>
+        </div>
+        <div th:replace="${fragments :: footer}"></div>
+    </body>
 </html>

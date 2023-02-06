@@ -1,5 +1,6 @@
 package org.launchcode.healthehub.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,6 +21,7 @@ public class User {
     private String lastName;
     
     @NotNull
+    @DateTimeFormat(pattern = "mm/dd/yyyy")
     private Date dob;
     
     @NotNull
@@ -28,6 +30,9 @@ public class User {
     
     @NotNull
     private String password;
+    
+    @NotNull
+    private String verifyPassword;
     
     @NotNull
     private String phone;
@@ -69,6 +74,12 @@ public class User {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+    public String getVerifyPassword() {
+        return verifyPassword;
+    }
+    public void setVerifyPassword(String verifyPassword) {
+        this.verifyPassword = verifyPassword;
     }
     public String getPhone() {
         return phone;
