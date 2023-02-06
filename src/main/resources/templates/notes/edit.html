@@ -40,8 +40,8 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <label th:for="content" th:field="${note.content}">Note: </label>
-                                            <textarea rows="25" cols="50"></textarea>
+                                            <label th:for="content" >Note: </label>
+                                            <textarea rows="25" cols="50" th:field="${note.content}" th:value="${note.content}"></textarea>
                                         </td>
                                     </tr>
                                 </table>
