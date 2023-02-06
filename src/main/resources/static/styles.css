@@ -1,29 +1,6 @@
 *{
   margin:0;
 }
-form{
-margin: 0;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
-.password{
-margin-top: 10px;
-border-color: antiquewhite;
-}
-
-.create_user{
-text-align:center;
-margin-top:15px;
-border: none;
-}
-
-.button{
-display:flex;
-justify-content:center;
-margin:10px auto;
-}
 
 button{
 padding-top:10px;
@@ -37,7 +14,6 @@ border:none;
 }
 
 input{
-  width:200px;
   border: none;
   border-color: gray;
   border-width:1px;
@@ -48,6 +24,11 @@ input{
   padding-right: 15px;
   border-radius:5px;
   }
+
   .inline-block {
     display: inline-block;
+  }
+
+  table th {
+    text-align: right;
   }

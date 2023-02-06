@@ -9,41 +9,40 @@
         <div class="inline-block">
             <div th:replace="~{fragments :: sidebar}"></div>
             <div>
+                <h3>Demographics Data</h3>
                 <table>
                     <tr>
-                        <td>
-                            Demographics Data
-                            <table>
-                                <tr>
-                                    <td th:text="${user.getFirstName()} + ' ' ${user.getLastName()}"></td>
-                                </tr>
-                                <tr>
-                                    <td th:text="${user.getDob()}"></td>
-                                </tr>
-                                <tr>
-                                    <td th:text="${user.getAddress()}"></td>
-                                </tr>
-                                <tr>
-                                    <td th:text="${user.getEmail()}"></td>
-                                <tr>
-                                     <td th:text="${user.getPhoneNumber()}"></td>
-                                </tr>
-                            </table>
-                        </td>
-                        <td>
-                            Notes
-                            <table th:each="note : ${notes}">
-                    <tr>
-                        <td th:text="${note.date}">date</td>
+                        <th style="text-align: right">Name: </th><td th:text="${user.getFirstName()} + ' ' ${user.getLastName()}">FirstName LastName</td>
                     </tr>
                     <tr>
-                        <td th:text="${note.content}">content</td>
-                                </tr>
+                        <th style="text-align: right">Date of Birth: </th><td th:text="${user.getDob()}">MM/DD/YYY</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: right">Address: </th><td th:text="${user.getAddress()}">123 Street, City, ST zipcode</td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: right">Email: </th><td th:text="${user.getEmail()}">email@website.com</td>
+                    <tr>
+                        <th style="text-align: right">Phone Number: </th><td th:text="${user.getPhoneNumber()}">123-456-7890</td>
+                    </tr>
                 </table>
+            </div>
+            <div>
+                <h3>Notes</h3>
                 <a href="notes/add.html"><button>Add Note</button></a>
-                        </td>
+                <table class="zebra">
+                    <tr th:each="note : ${notes}">
+                        <table>
+                            <tr>
+                                <td th:text="${note.date}">date & time</td>
+                            </tr>
+                            <tr>
+                                <td th:text="${note.content}">content</td>
+                            </tr>
+                        </table>
                     </tr>
                 </table>
+                <a href="notes/edit.html"><button>Edit Note</button></a>
             </div>
         </div>
     </body>
