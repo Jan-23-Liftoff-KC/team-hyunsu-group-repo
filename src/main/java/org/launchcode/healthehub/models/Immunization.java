@@ -18,7 +18,7 @@ public class Immunization {
     private String name;
     
     @NotNull
-    @DateTimeFormat(pattern = "mm/dd/yyyy")
+    @DateTimeFormat(pattern = "MM/DD/YYYY")
     private Date date;
     private String dosage;
     private String notes;
