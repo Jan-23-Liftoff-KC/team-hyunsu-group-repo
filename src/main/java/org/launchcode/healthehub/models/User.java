@@ -21,7 +21,7 @@ public class User {
     private String lastName;
     
     @NotNull
-    @DateTimeFormat(pattern = "mm/dd/yyyy")
+    @DateTimeFormat(pattern = "MM/DD/YYYY")
     private Date dob;
     
     @NotNull
