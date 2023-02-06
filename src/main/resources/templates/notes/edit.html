@@ -30,21 +30,24 @@
             </div>
             <div>
                 <h3>Notes</h3>
-                <form method="POST">
-                    <label th:for="content">Edit Your Note:</label><br>
-                    <textarea th:field="${note.content}" rows="4" cols="50" th:value="${note.content}"></textarea><br>
-                    <input type="submit" value="Save Note" />
-                </form>
                 <table class="zebra">
                     <tr th:each="note : ${notes}">
-                        <table>
-                            <tr>
-                                <td th:text="${note.date}">date & time</td>
-                            </tr>
-                            <tr>
-                                <td th:text="${note.content}">content</td>
-                            </tr>
-                        </table>
+                        <form method="post">
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td th:text="${note.date}">date & time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label th:for="content" th:field="${note.content}">Note: </label>
+                                            <textarea rows="25" cols="50"></textarea>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <input type="submit" value="Save All Notes" />
+                            </div>
+                        </form>
                     </tr>
                 </table>
             </div>
