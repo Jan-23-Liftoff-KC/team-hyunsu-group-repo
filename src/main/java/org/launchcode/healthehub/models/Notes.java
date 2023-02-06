@@ -1,10 +1,13 @@
 package org.launchcode.healthehub.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 public class Notes {
@@ -12,6 +15,8 @@ public class Notes {
     @GeneratedValue
     private int id;
     
+    @DateTimeFormat(pattern = "MM/DD/YYYY hh:mm a")
+    private Date date;
     @NotNull
     @Size(max=1000)
     private String contents;
@@ -19,7 +24,14 @@ public class Notes {
     public int getId() {
         return id;
     }
-        public String getContents() {
+    public Date getDate() {
+        return date;
+    }
+    public void setDate() {
+        this.date = new Date();
+    }
+    
+    public String getContents() {
         return contents;
     }
         public void setContents(String contents) {
