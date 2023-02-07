@@ -2,6 +2,10 @@
   margin:0;
 }
 
+h1 {
+    color: purple;
+}
+
 button{
 padding-top:10px;
 padding-bottom:10px;
