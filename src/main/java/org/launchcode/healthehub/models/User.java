@@ -4,9 +4,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class User {
@@ -39,6 +41,12 @@ public class User {
     
     @NotNull
     private  String address;
+    
+    @OneToMany
+    private List<Notes> notes;
+    
+    @OneToMany
+    private List<Immunization> immunizations;
     
     public User() {}
     
