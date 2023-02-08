@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
+<head th:fragment="head">
     <meta charset="UTF-8"/>
-    <title></title>
+    <title th:text="${title}">Health eHub</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <style>
+            div {
+            display: inline-block;
+            vertical-align: top;
+            margin: 20px;
+            }
+        </style>
 </head>
 <body>
-    <div th:fragment="header">
+    <header th:fragment="header">
         <table>
             <tr>
                 <td>
-                    <img src="logo.png" alt="Health eHub logo showing two stylized people embracing each other. One with a lighter skin tone, one with a darker skin tone." height="200px">
+                    <img src="/media/logo.png" alt="Health eHub logo showing two stylized people embracing each other. One with a lighter skin tone, one with a darker skin tone." height="100px">
                 </td>
                 <td>
                     <table>
@@ -27,9 +35,9 @@
                 </td>
             </tr>
         </table>
-    </div>
+    </header>
     <div th:fragment="sidebar">
-        <p th:text ="'Hello, ' + ${user.getFirstName()}"></p>
+<!--        <p th:text ="'Hello, ' + ${user.getFirstName()}"></p>-->
 <!--Table entries to be updated as links as we build the appropriate views.-->
         <table>
             <tr><td>Dashboard</td></tr>
