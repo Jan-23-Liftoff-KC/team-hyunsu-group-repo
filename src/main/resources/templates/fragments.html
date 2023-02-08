@@ -4,7 +4,8 @@
     <meta charset="UTF-8"/>
     <title th:text="${title}">Health eHub</title>
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
-    <style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />
+        <style>
             div {
             display: inline-block;
             vertical-align: top;
@@ -20,18 +21,8 @@
                     <img src="/media/logo.png" alt="Health eHub logo showing two stylized people embracing each other. One with a lighter skin tone, one with a darker skin tone." height="100px">
                 </td>
                 <td>
-                    <table>
-                        <tr>
-                            <td>
-                                <h1>Health eHub</h1>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h2>For the Health of It!</h2>
-                            </td>
-                        </tr>
-                    </table>
+                    <h1>Health eHub</h1>
+                    <h2>For the Health of It!</h2>
                 </td>
             </tr>
         </table>
@@ -54,16 +45,8 @@
 <!--More to be added for full Logout functionality later-->
         <button>Logout</button>
     </div>
-   <footer>
-    <div>
-
-    </div>
-    MIT License 2023
-    <div>
-     [Kit Pyles, Christine Dillon, Glapougbae Garmondeh, Katrina Merritt,]
-    </div>
-  </footer>
-<!--More fragments will be added here.-->
-
+    <footer th:fragment="footer">
+        MIT License 2023 | Kit Pyles, Christine Dillon, Glapougbae Garmondeh, Katrina Merritt
+    </footer>
 </body>
 </html>

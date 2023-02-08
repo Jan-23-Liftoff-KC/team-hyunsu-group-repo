@@ -1,33 +1,11 @@
-*{
-  margin:0;
+body {
+    font-family: Poppins, sans-serif;
 }
 
-button{
-padding-top:10px;
-padding-bottom:10px;
-padding-left:15px;
-padding-right:15px;
-border-radius:10px;
-border:none;
- background-color: #31316f;
- color:white;
+header {
+    margin: 0;
+    padding: 0;
 }
-
-input{
-  border: none;
-  border-color: gray;
-  border-width:1px;
-  border-style: solid;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-radius:5px;
-  }
-
-  .inline-block {
-    display: inline-block;
-  }
 
   table th {
     text-align: right;

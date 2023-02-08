@@ -3,8 +3,8 @@
     <head th:replace="~{fragments :: head}"></head>
     <body>
         <div th:replace="~{fragments :: header}"></div>
-        <div th:replace="~{fragments :: sidebar}"  class="inline-block"></div>
-        <div class="inline-block">
+        <div th:replace="~{fragments :: sidebar}"></div>
+        <div>
             <h3>Demographics Data</h3>
             <table>
                 <tr>
@@ -23,7 +23,7 @@
                 </tr>
             </table>
         </div>
-        <div class="inline-block">
+        <div>
             <h3>Notes</h3>
             <a href="notes/add.html"><button>Add Note</button></a>
             <table class="zebra">
@@ -40,5 +40,6 @@
             </table>
             <a href="notes/edit.html"><button>Edit Note</button></a>
         </div>
+        <footer th:replace="~{fragments :: footer}"></footer>
     </body>
 </html>
