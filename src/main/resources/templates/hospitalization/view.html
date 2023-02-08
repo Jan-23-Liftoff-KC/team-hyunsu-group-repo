@@ -1,39 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <!--    Need to add call to CSS files.-->
-    <title>Immunizations</title>
-</head>
-<body>
-<div th:replace="${fragments :: header}"></div>
-<div style="display: inline-block">
-    <div th:replace="${fragments :: sidebar}"></div>
-    <div>
-        <table>
-            <tr>
-                <th>Reason</th>
-                <th>Facility</th>
-                <th>Treatment</th>
-            </tr>
-            <tr>
-                <th>Admission Date</th>
-                <th>Discharge Date</th>
-                <th>Notes</th>
-            </tr>
-            <tr th:each="hospitalization: ${hospitalizations}">
-                <td th:text="${hospitalization.reason}"></td>
-                <td th:text="${hospitalization.facility}"></td>
-                <td th:text="${hospitalization.treatment}"></td>
-            </tr>
-            <tr>
-                <td th:text="${hospitalization.admitDate}"></td>
-                <td th:text="${hospitalization.dischargeDate}"></td>
-                <td th:text="${hospitalization.notes}"></td>
-            </tr>
-        </table>
-    </div>
-</div>
-<div th:replace="${fragments :: footer}"></div>
-</body>
+    <head th:replace="~{fragments :: head}"></head>
+    <body>
+        <div th:replace="${fragments :: header}"></div>
+        <div th:replace="${fragments :: sidebar}" class="inline-block"></div>
+        <div class="inline-block">
+            <table>
+                <tr>
+                    <th>Reason</th>
+                    <th>Facility</th>
+                    <th>Treatment</th>
+                </tr>
+                <tr>
+                    <th>Admission Date</th>
+                    <th>Discharge Date</th>
+                    <th>Notes</th>
+                </tr>
+                <tr th:each="hospitalization: ${hospitalizations}">
+                    <td th:text="${hospitalization.reason}"></td>
+                    <td th:text="${hospitalization.facility}"></td>
+                    <td th:text="${hospitalization.treatment}"></td>
+                </tr>
+                <tr>
+                    <td th:text="${hospitalization.admitDate}"></td>
+                    <td th:text="${hospitalization.dischargeDate}"></td>
+                    <td th:text="${hospitalization.notes}"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
 </html>
