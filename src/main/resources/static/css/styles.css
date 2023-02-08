@@ -1,5 +1,5 @@
 body {
-    font-family: Poppins, cursive, sans-serif;
+    font-family: Poppins, sans-serif;
 }
 
 header {
@@ -9,12 +9,4 @@ header {
 
   table th {
     text-align: right;
-  }
-
-  td h1 {
-  vertical-align: bottom;
-  }
-
-  td h2 {
-    vertical-align: top;
   }
