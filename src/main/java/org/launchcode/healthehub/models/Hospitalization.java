@@ -28,11 +28,11 @@ public class Hospitalization {
     private String treatment;
 
     @NotNull
-    @DateTimeFormat(pattern = "MM/DD/YY")
+    @DateTimeFormat(pattern = "MM/DD/YYYY")
     private Date dateOfAdmission;
 
     @NotNull
-    @DateTimeFormat(pattern = "MM/DD/YY")
+    @DateTimeFormat(pattern = "MM/DD/YYYY")
     private Date dateOfDischarge;
 
 
