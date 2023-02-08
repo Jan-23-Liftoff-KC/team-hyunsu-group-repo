@@ -2,9 +2,9 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="~{fragments :: head"></head>
 <body>
-    <div th:replace="${fragments :: header}"></div>
-    <div th:replace="${fragments :: sidebar}" class="inline-block"></div>
-    <div class="inline-block">
+    <div th:replace="~{fragments :: header}"></div>
+    <div th:replace="~{fragments :: sidebar}"></div>
+    <div>
         <form method="POST">
             <div class="buttons">
                 <div class="left">
