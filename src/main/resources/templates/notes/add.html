@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-    <head>
-        <meta charset="UTF-8"/>
-        <title>Welcome to your Dashboard!</title>
-        <link th:href="@{/css/styles.css}" rel="stylesheet" />
-        <style>
-            div {
-            display: inline-block;
-            vertical-align: top;
-            margin: 20px;
-            }
-        </style>
-    </head>
+    <head th:replace="~{fragments :: head}"></head>
     <body>
         <header th:replace="~{fragments :: header}"></header>
         <div th:replace="~{fragments :: sidebar}"></div>

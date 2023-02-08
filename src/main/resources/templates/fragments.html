@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
+<head th:fragment="head">
     <meta charset="UTF-8"/>
-    <title></title>
+    <title th:text="${title}">Health eHub</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <style>
+            div {
+            display: inline-block;
+            vertical-align: top;
+            margin: 20px;
+            }
+        </style>
 </head>
 <body>
     <header th:fragment="header">
