@@ -5,37 +5,34 @@
 <header th:replace="~{fragments :: header}"></header>
 <div th:replace="~{fragments :: sidebar}"></div>
 <div>
-    <h3>Pharmacy Data</h3>
-    <table>
-        <tr>
-            <th style="text-align: right">Pharmacy: </th>
-            <!--                        <td th:text="${user.getName()}>Pharmacy Name</td>-->
-        </tr>
-       <tr>
-            <th style="text-align: right">Address: </th>
-            <td th:text="${user.getAddress()}>Pharmacy Address</td>
-       </tr>
-            <th style="text-align: right">Phone Number: </th>
-            <!--                    <td th:text="${user.getPhone()}">123-456-7890</td>-->
-        </tr>
-    </table>
-</div>
-<div>
-    <h3>Notes</h3>
-    <form action="POST">
-        <label th:for="content">Add Your Note:</label><br>
-        <!--                        <textarea th:field="${note.content}" rows="4" cols="50"></textarea><br>-->
-        <input type="submit" value="Add Note">
+    <h3>Pharmacy</h3>
+    <form>
+        <input type="hidden" name="id" th:value="${pharmacy.id}" />
+        <table>
+            <tr>
+                <th style="text-align: right"><label th:for="name">Pharmacy: </label></th>
+                <td><input type="text" name="name" th:placeholder="${pharmacy.name}" th:field="${pharmacy.name}" /></td>
+            </tr>
+            <tr>
+                <th style="text-align: right"><label th:for="address">Address: </label></th>
+                <td><input type="text" th:placeholder="${pharmacy.address}" th:field="${pharmacy.address}" /></td>
+            </tr>
+            <tr>
+                <th style="text-align: right"><label th:for="phone">Phone Number: </label></th>
+                <td><input type="text" th:placeholder="${pharmacy.phone}" /></td>
+            </tr>
+            <tr>
+                <th style="text-align: right"><label for="fax">Fax Number: </label></th>
+                <td><input type="text" th:placeholder="${pharmacy.fax}" th:field=${pharmacy.fax}" /></td>
+            </tr>        
+        </table>
+        <input type="submit" value="Save Pharmacy" />
     </form>
-    <table class="zebra">
-        <tr th:each="note : ${notes}">
-            <table>
-                <tr>
-                    <!--                                    <td th:text="${note.date}">date & time</td>-->
-                </tr>
-                <tr>
-                    <!--                                    <td th:text="${note.content}">content</td>-->
-                </tr>
+</div>
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
+</html>
+               
             </table>
         </tr>
     </table>
