@@ -28,8 +28,7 @@ public class Pharmacy {
     public Pharmacy() {
     }
 
-    public Pharmacy(int id, String facilityName, String pharmPhone, String fax) {
-        this.id = id;
+    public Pharmacy(String name, String address, String phone, String fax) {
         this.name = name;
         this.address = address;
         this.phone = phone;
