@@ -5,24 +5,26 @@
 <div th:replace="~{fragments :: header}"></div>
 <div th:replace="~{fragments :: sidebar}"></div>
 <div>
-    <table>
+    <table th:each="pharmacy : ${pharmacies}">
         <tr>
             <th>Pharmacy</th>
             <th>Address</th>
-            <th>Phone Number</th>
-            <th>Fax</th>
-            <th>Notes</th>
         </tr>
         <tr>
-            <th>Notes</th>
-        </tr>
-        <tr th:each="Pharmacy: ${pharmacy}">
             <td th:text="${pharmacy.name}"></td>
             <td th:text="${pharmacy.address}"></td>
-        
+        </tr>
+        <tr>
+            <th>Phone Number</th>
+            <th>Fax Number</th>
+        </tr>
+        <tr>
             <td th:text="${pharmacy.phone}"></td>
             <td th:text="${pharmacy.fax}"></td>
         </tr>
+        <tr>
+            <th>Notes</th>
+        </tr>       
         <tr>
             <td th:text="${pharmacy.notes}"></td>
         </tr>
