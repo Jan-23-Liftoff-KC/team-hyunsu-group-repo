@@ -24,15 +24,18 @@ public class Pharmacy {
     
     @NotNull
     private String address;
+    
+    private String notes;
 
     public Pharmacy() {
     }
 
-    public Pharmacy(String name, String address, String phone, String fax) {
+    public Pharmacy(String name, String address, String phone, String fax, String notes) {
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.fax = fax;
+        this.notes = notes;
     }
 
     public int getId() {
@@ -70,5 +73,13 @@ public class Pharmacy {
 
     public void setFax(String fax) {
         this.fax = fax;
+    }
+    
+    public String getNotes() {
+        return notes;
+    }
+    
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 }
