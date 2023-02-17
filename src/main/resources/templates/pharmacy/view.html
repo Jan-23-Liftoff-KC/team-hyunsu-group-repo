@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+<div th:replace="~{fragments :: sidebar}"></div>
+<div>
+    <table>
+        <tr>
+            <th>Facility</th>
+            <th>Phone Number</th>
+            <th>Fax</th>
+        </tr>
+        <tr>
+            <th>Notes</th>
+        </tr>
+        <tr th:each="hospitalization: ${hospitalizations}">
+            <td th:text="${pharmacy.facilityName}"></td>
+            <td th:text="${pharmacy.phoneNumber}"></td>
+            <td th:text="${pharmacy.fax}"></td>
+        </tr>
+        <tr>
+            <td th:text="${pharmacy.notes}"></td>
+        </tr>
+    </table>
+</div>
+<footer th:replace="~{fragments :: footer"></footer>
+</body>
+</html>
