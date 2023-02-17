@@ -8,7 +8,7 @@ git<!DOCTYPE html>
             <h4>For the Health of It!</h4>
             <p>Health eHub is a universal health record created for YOU! It's not a patient portal. It's not tied to a doctor's office or hospital. It's an app for you to gather all of <b>your</b>
                 health information in one secure place, regardless of changing doctors, moving, or travelling.</p>
-            <p>Your health data is yours. And, we feel that you should have possession of it. Please log in at the right to access your secure account. If you don't have an account yet, then <a>Register Here.</a></p>
+            <p>Your health data is yours. And, we feel that you should have possession of it. Please log in at the right to access your secure account. If you don't have an account yet, then <a th:href="${/registration.html}">Register Here.</a></p>
         </div>
         <div>
             <form method="post" action="login">
@@ -27,6 +27,3 @@ git<!DOCTYPE html>
         <footer th:replace="~{fragments :: footer}"></footer>
     </body>
 </html>
-
-<!--th:href="${/registration.html}"-->
-<!--goes on line 13 in <a></a> tag but the link is not working-->
