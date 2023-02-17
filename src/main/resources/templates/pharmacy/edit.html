@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<body>
+<header th:replace="~{fragments :: header}"></header>
+<div th:replace="~{fragments :: sidebar}"></div>
+<div>
+    <h3>Pharmacy</h3>
+    <form>
+        <input type="hidden" name="id" th:value="${pharmacy.id}" />
+        <table>
+            <tr>
+                <th><label th:for="name">Pharmacy: </label></th><th><label th:for="address">Address: </label></th>
+            </tr>
+            <tr>
+                <td><input type="text" name="name" th:value="${pharmacy.name}" th:field="${pharmacy.name}" /></td><td><input type="text" th:value="${pharmacy.address}" th:field="${pharmacy.address}" /></td>
+            </tr>
+            <tr>
+                <th><label th:for="phone">Phone Number: </label></th><th><label for="fax">Fax Number: </label></th>
+            </tr>
+            <tr>
+                <td><input type="text" th:value="${pharmacy.phone}" th:field="${pharmacy.phone}" /></td><td><input type="text" th:value="${pharmacy.fax}" th:field=${pharmacy.fax}" /></td>
+            </tr>
+            <tr>
+                <th><label th:for="notes">Notes: </label></th>                
+            </tr>
+            <tr>
+                <td><input type="text" th:value="${pharmacy.notes}" th:field="${pharmacy.notes}" /></td>
+            </tr>
+        </table>
+        <input type="submit" value="Save Pharmacy" />
+    </form>
+</div>
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
+</html>
