@@ -7,16 +7,20 @@
 <div>
     <table>
         <tr>
-            <th>Facility</th>
+            <th>Pharmacy</th>
+            <th>Address</th>
             <th>Phone Number</th>
             <th>Fax</th>
+            <th>Notes</th>
         </tr>
         <tr>
             <th>Notes</th>
         </tr>
-        <tr th:each="hospitalization: ${hospitalizations}">
-            <td th:text="${pharmacy.facilityName}"></td>
-            <td th:text="${pharmacy.phoneNumber}"></td>
+        <tr th:each="Pharmacy: ${pharmacy}">
+            <td th:text="${pharmacy.name}"></td>
+            <td th:text="${pharmacy.address}"></td>
+        
+            <td th:text="${pharmacy.phone}"></td>
             <td th:text="${pharmacy.fax}"></td>
         </tr>
         <tr>
@@ -24,6 +28,6 @@
         </tr>
     </table>
 </div>
-<footer th:replace="~{fragments :: footer"></footer>
+<footer th:replace="~{fragments :: footer}"></footer>
 </body>
 </html>
