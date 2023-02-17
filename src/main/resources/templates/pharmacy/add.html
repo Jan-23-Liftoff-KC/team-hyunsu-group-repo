@@ -9,10 +9,15 @@
     <form>
         <table>
             <tr>
-                <th><label th:for="name">Pharmacy: </label></th><th><label th:for="address">Address: </label></th>
+                <th>
+                    <label th:for="name">Pharmacy: </label>
+                </th>
+                <th>
+                    <label th:for="address">Address: </label>
+                </th>
             </tr>
             <tr>
-                <td><input type="text" name="name" th:placeholder="${pharmacy.name}" th:field="${pharmacy.name}" /></td><td><input type="text" th:placeholder="${pharmacy.address}" th:field="${pharmacy.address}" /></td>
+                <td><input type="text" name="name" th:field="${pharmacy.name}" /></td><td><input type="text"  th:field="${pharmacy.address}" /></td>
             </tr>
             <tr>
                 <th><label th:for="phone">Phone Number: </label></th><th><label for="fax">Fax Number: </label></th>
