@@ -11,24 +11,28 @@ import javax.validation.constraints.NotNull;
 public class Pharmacy {
     @Id
     @GeneratedValue
-    public int id;
+    private int id;
 
     @NotNull
-    public String facilityName;
+    private String name;
 
     @NotNull
-    public String pharmPhone;
+    private String phone;
 
     @NotNull
-    public String fax;
+    private String fax;
+    
+    @NotNull
+    private String address;
 
     public Pharmacy() {
     }
 
     public Pharmacy(int id, String facilityName, String pharmPhone, String fax) {
         this.id = id;
-        this.facilityName = facilityName;
-        this.pharmPhone = pharmPhone;
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
         this.fax = fax;
     }
 
@@ -37,20 +41,28 @@ public class Pharmacy {
     }
 
 
-    public String getFacilityName() {
-        return facilityName;
+    public String getName() {
+        return name;
     }
 
-    public void setFacilityName(String facilityName) {
-        this.facilityName = facilityName;
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public String getAddress() {
+        return address;
+    }
+    
+    public String setAddress(String address) {
+        this.address = address;
     }
 
-    public String getPharmPhone() {
-        return pharmPhone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPharmPhone(String pharmPhone) {
-        this.pharmPhone = pharmPhone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getFax() {
