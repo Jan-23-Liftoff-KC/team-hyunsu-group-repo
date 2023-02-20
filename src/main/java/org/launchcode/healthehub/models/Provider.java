@@ -105,7 +105,7 @@ public class Provider {
         this.specialty = specialty;
     }
 
-    public String setWebsite() {
+    public String getWebsite() {
         return website;
     }
 
