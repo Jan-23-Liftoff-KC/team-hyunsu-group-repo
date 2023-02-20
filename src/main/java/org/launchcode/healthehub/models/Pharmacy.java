@@ -55,7 +55,7 @@ public class Pharmacy {
         return address;
     }
     
-    public String setAddress(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -75,7 +75,9 @@ public class Pharmacy {
         this.fax = fax;
     }
     
-    public String getNotes() {
+    public String getNotes()
+    {
+
         return notes;
     }
     
