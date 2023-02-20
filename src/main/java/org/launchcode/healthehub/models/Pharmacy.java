@@ -1,5 +1,6 @@
 package org.launchcode.healthehub.models;
 
+import lombok.*;
 import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.Entity;
@@ -7,10 +8,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Builder
 @Entity
 public class Pharmacy {
+
     @Id
     @GeneratedValue
+    @Setter(AccessLevel.NONE)
     private int id;
 
     @NotNull
@@ -26,62 +34,4 @@ public class Pharmacy {
     private String address;
     
     private String notes;
-
-    public Pharmacy() {
-    }
-
-    public Pharmacy(String name, String address, String phone, String fax, String notes) {
-        this.name = name;
-        this.address = address;
-        this.phone = phone;
-        this.fax = fax;
-        this.notes = notes;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public String getAddress() {
-        return address;
-    }
-    
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getFax() {
-        return fax;
-    }
-
-    public void setFax(String fax) {
-        this.fax = fax;
-    }
-    
-    public String getNotes()
-    {
-
-        return notes;
-    }
-    
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
 }
