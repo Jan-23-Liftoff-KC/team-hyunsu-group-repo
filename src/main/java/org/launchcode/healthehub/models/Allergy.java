@@ -15,90 +15,47 @@ public class Allergy {
     @GeneratedValue
     private int id;
 
-    @NotNull
-    private String reason;
+    private String medAllergy;
 
-    @NotNull
-    private String facility;
+    private String othAllergy;
 
-    @NotNull
-    private String provider;
+    private String rxnComment;
 
-    @NotNull
-    private String treatment;
-
-    @NotNull
-    @DateTimeFormat(pattern = "MM/DD/YYYY")
-    private Date dateOfAdmission;
-
-    @NotNull
-    @DateTimeFormat(pattern = "MM/DD/YYYY")
-    private Date dateOfDischarge;
-
-
-        public Allergy(){}
+    public Allergy(){
+    }
 
     public int getId() {
         return id;
     }
 
-    public Allergy(int id, String reason, String facility, String provider, String treatment, Date dateOfAdmission, Date dateOfDischarge) {
+    public Allergy(int id, String medAllergy, String othAllergy, String rxnComment) {
         this.id = id;
-        this.reason = reason;
-        this.facility = facility;
-        this.provider = provider;
-        this.treatment = treatment;
-        this.dateOfAdmission = dateOfAdmission;
-        this.dateOfDischarge = dateOfDischarge;
+        this.medAllergy = medAllergy;
+        this.othAllergy = othAllergy;
+        this.rxnComment = rxnComment;
     }
 
-
-
-    public String getReason() {
-        return reason;
+    public String getMedAllergy() {
+        return medAllergy;
     }
 
-    public void setReason(String reason) {
-        this.reason = reason;
+    public void setMedAllergy(String medAllergy) {
+        this.medAllergy = medAllergy;
     }
 
-    public String getFacility() {
-        return facility;
+    public String getothAllergy() {
+        return othAllergy;
     }
 
-    public void setFacility(String facility) {
-        this.facility = facility;
+    public void setothAllergy(String othAllergy) {
+        this.othAllergy = othAllergy;
     }
 
-    public String getProvider() {
-        return provider;
+    public String getrxnComment() {
+        return rxnComment;
     }
 
-    public void setProvider(String provider) {
-        this.provider = provider;
-    }
-
-    public String getTreatment() {
-        return treatment;
-    }
-
-    public void setTreatment(String treatment) {
-        this.treatment = treatment;
-    }
-
-    public Date getDateOfAdmission() {
-        return dateOfAdmission;
-    }
-
-    public void setDateOfAdmission(Date dateOfAdmission) {
-        this.dateOfAdmission = dateOfAdmission;
-    }
-
-    public Date getDateOfDischarge() {
-        return dateOfDischarge;
-    }
-
-    public void setDateOfDischarge(Date dateOfDischarge) {
-        this.dateOfDischarge = dateOfDischarge;
+    public void setrxnComment(String rxnComment) {
+        this.rxnComment = rxnComment;
     }
 }
