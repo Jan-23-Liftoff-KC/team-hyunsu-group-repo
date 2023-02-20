@@ -1,7 +1,7 @@
 package org.launchcode.healthehub.models.data;
 
 import org.launchcode.healthehub.models.Notes;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface NotesRepository extends CrudRepository <Notes, Integer> {
+public interface NotesRepository extends JpaRepository <Notes, Integer> {
 }

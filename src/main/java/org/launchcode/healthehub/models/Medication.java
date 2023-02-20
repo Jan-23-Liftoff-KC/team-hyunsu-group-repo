@@ -15,59 +15,47 @@ public class Medication {
     @GeneratedValue
     private int id;
 
-    @NotNull
-    private String reason;
 
-    @NotNull
-    private String facility;
+    private String rxMed;
 
-    @NotNull
+
+    private String otcMed;
+
+
     private String provider;
 
-    @NotNull
-    private String treatment;
 
-    @NotNull
-    @DateTimeFormat(pattern = "MM/DD/YYYY")
-    private Date dateOfAdmission;
+    private String useReason;
 
-    @NotNull
-    @DateTimeFormat(pattern = "MM/DD/YYYY")
-    private Date dateOfDischarge;
-
-
-        public Medication(){}
+    public Medication(){
+    }
 
     public int getId() {
         return id;
     }
 
-    public Medication(int id, String reason, String facility, String provider, String treatment, Date dateOfAdmission, Date dateOfDischarge) {
+    public Medication(int id, String rxMed, String otcMed, String provider, String useReason) {
         this.id = id;
-        this.reason = reason;
-        this.facility = facility;
+        this.rxMed = rxMed;
+        this.otcMed = otcMed;
         this.provider = provider;
-        this.treatment = treatment;
-        this.dateOfAdmission = dateOfAdmission;
-        this.dateOfDischarge = dateOfDischarge;
+        this.useReason = useReason;
     }
 
-
-
-    public String getReason() {
-        return reason;
+    public String getRxMed() {
+        return rxMed;
     }
 
-    public void setReason(String reason) {
-        this.reason = reason;
+    public void setRxMed(String rxMed) {
+        this.rxMed = rxMed;
     }
 
-    public String getFacility() {
-        return facility;
+    public String getOtcMed() {
+        return otcMed;
     }
 
-    public void setFacility(String facility) {
-        this.facility = facility;
+    public void setOtcMed(String otcMed) {
+        this.otcMed = otcMed;
     }
 
     public String getProvider() {
@@ -78,27 +66,11 @@ public class Medication {
         this.provider = provider;
     }
 
-    public String getTreatment() {
-        return treatment;
+    public String getUseReason() {
+        return useReason;
     }
 
-    public void setTreatment(String treatment) {
-        this.treatment = treatment;
-    }
-
-    public Date getDateOfAdmission() {
-        return dateOfAdmission;
-    }
-
-    public void setDateOfAdmission(Date dateOfAdmission) {
-        this.dateOfAdmission = dateOfAdmission;
-    }
-
-    public Date getDateOfDischarge() {
-        return dateOfDischarge;
-    }
-
-    public void setDateOfDischarge(Date dateOfDischarge) {
-        this.dateOfDischarge = dateOfDischarge;
+    public void setUseReason(String useReason) {
+        this.useReason = useReason;
     }
 }
