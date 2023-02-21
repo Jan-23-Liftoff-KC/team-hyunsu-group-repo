@@ -1,6 +1,7 @@
 package org.launchcode.healthehub.controllers;
 
 import org.launchcode.healthehub.models.User;
+import org.launchcode.healthehub.models.data.NotesRepository;
 import org.launchcode.healthehub.models.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,12 +10,16 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("user")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private NotesRepository notesRepository;
 
     @GetMapping("registration")
     public String showRegistrationForm(Model model){
@@ -29,6 +34,7 @@ public class UserController {
             return "/user/registration";
         } else {
             userRepository.save(newUser);
+            int userId = newUser.getId();
             return "/user/dashboard";
         }
     }
@@ -36,8 +42,15 @@ public class UserController {
     @GetMapping("dashboard/{userId}")
     public String viewDashboard(@PathVariable int userId, Model model) {
         model.addAttribute("title", "Health eHub");
-        model.addAttribute("users", userRepository.findAll());
+        Optional<User> optUser = userRepository.findById(4);
+        if (optUser.isPresent()) {
+            User user = (User) optUser.get();
+            model.addAttribute("user", user);
+            model.addAttribute("notes", notesRepository.findAll());
+            return "/user/dashboard";
+        } else {
+            return "redirect:../";
+        }
 
-        return "/user/dashboard";
     }
 }

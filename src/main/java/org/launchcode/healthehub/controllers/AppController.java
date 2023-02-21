@@ -18,7 +18,8 @@ public class AppController {
     private UserRepository userRepository;
 
     @GetMapping("/")
-    public String viewHomePage(){
+    public String viewHomePage(Model model){
+        model.addAttribute("title", "Health eHub");
         return "index";
     }
 }
