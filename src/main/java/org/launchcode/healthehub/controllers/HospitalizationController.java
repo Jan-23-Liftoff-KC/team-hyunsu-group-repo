@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 @Controller
-@Slf4j
+
 @RequestMapping("hospitalization")
 public class HospitalizationController {
 
@@ -48,6 +48,7 @@ public class HospitalizationController {
     public String saveHosp(@ModelAttribute @Valid Hospitalization newHosp, Errors errors, Model model) {
 
         if (errors.hasErrors()) {
+            model.addAttribute("message", "There is a problem with your information. Please double check all entries.");
             return "hospitalization/add";
         } else {
             hospRepository.save(newHosp);
@@ -59,6 +60,7 @@ public class HospitalizationController {
     public String addAnotherHosp(@ModelAttribute @Valid Hospitalization newHosp, Errors errors, Model model, HttpServletRequest request) {
 
         if (errors.hasErrors()) {
+            model.addAttribute("message", "There is a problem with your information. Please double check all entries.");
             return "hospitalization/add";
         }
 

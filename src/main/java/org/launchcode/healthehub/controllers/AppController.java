@@ -21,18 +21,4 @@ public class AppController {
     public String viewHomePage(){
         return "index";
     }
-    @GetMapping("/user/registration")
-    public String showRegistrationForm(Model model){
-        model.addAttribute("register", new User());
-        return "index";
-    }
-    @PostMapping(value = "/user/registration", params = "register")
-    public String registerNewAccount(@ModelAttribute @Valid User newUser, Errors errors, Model model) {
-        if (errors.hasErrors()) {
-            return "/user/registration";
-        }
-
-        userRepository.save(newUser);
-        return "index";
-    }
 }

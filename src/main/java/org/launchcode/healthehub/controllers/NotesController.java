@@ -36,7 +36,6 @@ public class NotesController {
         if(errors.hasErrors()){
         return "notes/add";
         }
-        newNote.setDate();
         notesRepository.save(newNote);
         return "redirect:";
     }

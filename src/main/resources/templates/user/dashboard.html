@@ -6,9 +6,9 @@
         <div class="body-block" th:replace="~{fragments :: sidebar}"></div>
         <div class="body-block">
             <h3>Demographics Data</h3>
-            <table>
+            <table th:each="user : ${users}">
                 <tr>
-                    <th style="text-align: right">Name: </th><td th:text="${user.getFirstName()} + ' ' ${user.getLastName()}">FirstName LastName</td>
+                    <th style="text-align: right">Name: </th><td th:text="${user.getFirstName()} + ' ' + ${user.getLastName()}">FirstName LastName</td>
                 </tr>
                 <tr>
                     <th style="text-align: right">Date of Birth: </th><td th:text="${user.getDob()}">MM/DD/YYY</td>
@@ -25,7 +25,7 @@
         </div>
         <div class="body-block">
             <h3>Notes</h3>
-            <a href="notes/add.html"><button>Add Note</button></a>
+            <a href="../notes/add.html"><button>Add Note</button></a>
             <table class="zebra">
                 <tr th:each="note : ${notes}">
                     <table>
@@ -38,7 +38,7 @@
                     </table>
                 </tr>
             </table>
-            <a href="notes/edit.html"><button>Edit Note</button></a>
+            <a href="../notes/edit.html"><button>Edit Note</button></a>
         </div>
         <footer th:replace="~{fragments :: footer}"></footer>
     </body>

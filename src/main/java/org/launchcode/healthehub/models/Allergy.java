@@ -18,6 +18,14 @@ public class Allergy {
 
     private String rxnComment;
 
+    public Allergy(){};
+
+    public Allergy(String medAllergy, String othAllergy, String rxnComment) {
+        this.medAllergy = medAllergy;
+        this.othAllergy = othAllergy;
+        this.rxnComment = rxnComment;
+    }
+
     public int getId() {
         return id;
     }
