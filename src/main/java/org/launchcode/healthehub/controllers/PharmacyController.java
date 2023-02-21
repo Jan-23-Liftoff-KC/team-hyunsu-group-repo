@@ -24,13 +24,15 @@ public class PharmacyController {
     @RequestMapping(value = "view", method = RequestMethod.GET)
     public String getPharmView(Model model) {
         model.addAttribute("title", "Health eHub: Pharmacy");
-        model.addAttribute("Pharmacies", pharmRepository.findAll());
+        model.addAttribute("pharmacies", pharmRepository.findAll());
+        model.addAttribute("user", userRepository.findById(4));
         return "pharmacy/view";
     }
     //    get add
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String showAddPharm(Model model) {
         model.addAttribute("title", "Health eHub: Pharmacy");
+        model.addAttribute("user", userRepository.findById(4));
         model.addAttribute(new Pharmacy());
         return "pharmacy/add";
     }
@@ -40,6 +42,7 @@ public class PharmacyController {
     public String savePharm(@ModelAttribute @Valid Pharmacy newPharm, Errors errors, Model model) {
 
         if (errors.hasErrors()) {
+            model.addAttribute("message","There is a problem with your information.");
             return "pharmacy/add";
         } else {
             pharmRepository.save(newPharm);
@@ -51,8 +54,9 @@ public class PharmacyController {
     public String addAnotherPharm(@ModelAttribute @Valid Pharmacy newPharm, Errors errors, Model model, HttpServletRequest request) {
 
         if (errors.hasErrors()) {
+            model.addAttribute("message","There is a problem with your information.");
             return "pharmacy/add";
-        }
+        } else {
 
         pharmRepository.save(newPharm);
         model.addAttribute("message", "Save successful.");
