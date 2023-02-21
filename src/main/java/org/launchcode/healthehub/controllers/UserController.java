@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -22,7 +19,7 @@ public class UserController {
     @GetMapping("registration")
     public String showRegistrationForm(Model model){
         model.addAttribute("title", "Health eHub: Account Registration");
-        model.addAttribute("register", new User());
+        model.addAttribute("user", new User());
         return "/user/registration";
     }
     @PostMapping("registration")
@@ -34,5 +31,13 @@ public class UserController {
             userRepository.save(newUser);
             return "/user/dashboard";
         }
+    }
+
+    @GetMapping("dashboard/{userId}")
+    public String viewDashboard(@PathVariable int userId, Model model) {
+        model.addAttribute("title", "Health eHub");
+        model.addAttribute("users", userRepository.findAll());
+
+        return "/user/dashboard";
     }
 }
