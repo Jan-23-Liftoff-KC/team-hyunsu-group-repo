@@ -23,6 +23,7 @@ public class AppController {
     }
     @GetMapping("/user/registration")
     public String showRegistrationForm(Model model){
+        model.addAttribute("title", "Health eHub: Account Registration");
         model.addAttribute("register", new User());
         return "index";
     }
