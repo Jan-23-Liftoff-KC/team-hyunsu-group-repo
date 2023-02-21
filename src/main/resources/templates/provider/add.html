@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head th:replace="~{fragments :: head"></head>
+<head th:replace="~{fragments :: head}"></head>
 <body>
 <div th:replace="~{fragments :: header}"></div>
 <div th:replace="~{fragments :: sidebar}"></div>
@@ -8,10 +8,10 @@
     <form method="POST">
         <div class="buttons">
             <div class="left">
-                <button action="input.html" id="addAnother">Add Another</button>
+                <input type="submit" name="addAnother">Add Another</button>
             </div>
             <div class="right">
-                <button action="view.html" id="save">Save</button>
+                <input type="submit" name="save">Save</button>
             </div>
         </div>
         <table>
@@ -30,13 +30,13 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" id="firstName" size="33" placeholder="First Name" />
+                            <input type="text" id="firstName" size="33" placeholder="First Name" th:field="${provider.firstName}" />
                         </td>
                         <td>
-                            <input type="text" id="lastName" size="33" placeholder="Last Name"/>
+                            <input type="text" id="lastName" size="33" placeholder="Last Name" th:field="${provider.lastName}" />
                         </td>
                         <td>
-                            <input type="text" id="address" size="33" placeholder="Address" />
+                            <input type="text" id="address" size="33" placeholder="Address" th:field="${provider.address}" />
                         </td>
                     </tr>
                     <tr>
@@ -52,13 +52,13 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" id="phone" size="33" placeholder="Phone Number" />
+                            <input type="text" id="phone" size="33" placeholder="Phone Number" th:field="${provider.phone}" />
                         </td>
                         <td>
-                            <input type="text" id="fax" size="33" placeholder="Fax Number"/>
+                            <input type="text" id="fax" size="33" placeholder="Fax Number" th:field="${provider.fax}" />
                         </td>
                         <td>
-                            <input type="text" id="specialty" size="33" placeholder="Provider Specialty" />
+                            <input type="text" id="specialty" size="33" placeholder="Provider Specialty" th:field="${provider.specialty}" />
                         </td>
                     </tr>
                 </table>
@@ -72,7 +72,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" id="notes" size="110" placeholder="Notes" />
+                            <input type="text" id="notes" size="110" placeholder="Notes" th:field="${provider.notes}" />
                         </td>
                     </tr>
                 </table>
@@ -80,6 +80,6 @@
         </table>
     </form>
 </div>
-<footer th:replace="~{fragments :: footer"></footer>
+<footer th:replace="~{fragments :: footer}"></footer>
 </body>
 </html>
