@@ -12,7 +12,11 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 
 @Controller
 @Slf4j
@@ -39,28 +43,29 @@ public class HospitalizationController {
         return "hospitalization/add";
     }
 //    post add
-//    @RequestMapping(value = "add", method = RequestMethod.POST, params ="save")
-    @PostMapping("add")
+    @RequestMapping(value = "add", method = RequestMethod.POST, params ="save")
+//    @PostMapping("add")
     public String saveHosp(@ModelAttribute @Valid Hospitalization newHosp, Errors errors, Model model) {
+
+        if (errors.hasErrors()) {
+            return "hospitalization/add";
+        } else {
+            hospRepository.save(newHosp);
+            return "/hospitalization/view";
+        }
+    }
+
+    @RequestMapping(value = "add", method = RequestMethod.POST, params = "addAnother")
+    public String addAnotherHosp(@ModelAttribute @Valid Hospitalization newHosp, Errors errors, Model model, HttpServletRequest request) {
 
         if (errors.hasErrors()) {
             return "hospitalization/add";
         }
 
         hospRepository.save(newHosp);
-        return "/hospitalization/view";
+        model.addAttribute("message", "Save successful.");
+        return "/hospitalization/add";
     }
-
-//    @RequestMapping(value = "add", method = RequestMethod.POST, params = "addAnother")
-//    public String addAnotherHosp(@ModelAttribute @Valid Hospitalization newHosp, Errors errors, Model model) {
-//
-//        if (errors.hasErrors()) {
-//            return "hospitalization/add";
-//        }
-//
-//        hospRepository.save(newHosp);
-//        return "/hospitalization/add";
-//    }
 
 //    get edit - TODO fix later
 //    @GetMapping("edit/{hospId}")

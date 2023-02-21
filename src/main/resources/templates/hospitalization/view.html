@@ -5,6 +5,7 @@
         <header th:replace="~{fragments :: header}"></header>
         <div class="body-block" th:replace="~{fragments :: sidebar}"></div>
         <div class="body-block">
+            <a th:href="@{/hospitalization/add}"><button th:action="new">Create New Record</button></a>
             <table th:each="hospitalization: ${hospitalizations}">
                 <tr>
                     <th>Reason</th>
@@ -27,7 +28,6 @@
                     <td th:text="${hospitalization.notes}"></td>
                 </tr>
             </table>
-            <a th:href="@{/hospitalization/add}"><button th:action="new">Create New Record</button></a>
         </div>
         <footer th:replace="~{fragments :: footer}"></footer>
     </body>

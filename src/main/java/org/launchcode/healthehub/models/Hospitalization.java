@@ -1,12 +1,10 @@
 package org.launchcode.healthehub.models;
 
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -32,12 +30,10 @@ public class Hospitalization {
     private String treatment;
 
     @NotNull
-    @DateTimeFormat(pattern = "MM/DD/YYYY")
-    private Date dateOfAdmission;
+    private String dateOfAdmission;
 
     @NotNull
-    @DateTimeFormat(pattern = "MM/DD/YYYY")
-    private Date dateOfDischarge;
+    private String dateOfDischarge;
 
     private String notes;
 
@@ -77,19 +73,19 @@ public class Hospitalization {
         this.treatment = treatment;
     }
 
-    public Date getDateOfAdmission() {
+    public String getDateOfAdmission() {
         return dateOfAdmission;
     }
 
-    public void setDateOfAdmission(Date dateOfAdmission) {
+    public void setDateOfAdmission(String dateOfAdmission) {
         this.dateOfAdmission = dateOfAdmission;
     }
 
-    public Date getDateOfDischarge() {
+    public String getDateOfDischarge() {
         return dateOfDischarge;
     }
 
-    public void setDateOfDischarge(Date dateOfDischarge) {
+    public void setDateOfDischarge(String dateOfDischarge) {
         this.dateOfDischarge = dateOfDischarge;
     }
 

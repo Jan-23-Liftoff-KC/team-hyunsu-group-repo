@@ -16,6 +16,7 @@ import javax.validation.Valid;
 public class AppController {
     @Autowired
     private UserRepository userRepository;
+
     @GetMapping("/")
     public String viewHomePage(){
         return "index";
@@ -25,7 +26,7 @@ public class AppController {
         model.addAttribute("register", new User());
         return "index";
     }
-    @PostMapping(value = "/user/registration", params = "action: register")
+    @PostMapping(value = "/user/registration", params = "register")
     public String registerNewAccount(@ModelAttribute @Valid User newUser, Errors errors, Model model) {
         if (errors.hasErrors()) {
             return "/user/registration";
