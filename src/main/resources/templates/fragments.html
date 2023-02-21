@@ -5,13 +5,13 @@
     <title th:text="${title}">Health eHub</title>
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />
-        <style>
-            div {
-            display: inline-block;
-            vertical-align: top;
-            margin: 20px;
-            }
-        </style>
+    <style>
+        div {
+        display: inline-block;
+        vertical-align: top;
+        margin: 20px;
+        }
+    </style>
 </head>
 <body>
     <header th:fragment="header">
@@ -31,19 +31,19 @@
 <!--        <p th:text ="'Hello, ' + ${user.getFirstName()}"></p>-->
 <!--Table entries to be updated as links as we build the appropriate views.-->
         <table>
-            <tr><td>Dashboard</td></tr>
-            <tr><td>Allergies</td></tr>
-            <tr><td>Diagnoses</td></tr>
-            <tr><td>Hospitalizations</td></tr>
-            <tr><td>Immunizations</td></tr>
-            <tr><td>Medications</td></tr>
-            <tr><td>Pharmacy</td></tr>
-            <tr><td>Providers</td></tr>
-            <tr><td>Test Results</td></tr>
-            <tr><td>Vitals</td></tr>
+            <tr><td><a th:href="@{../dashboard}">Dashboard</a></td></tr>
+            <tr><td><a th:href="@{../allergy/view}">Allergies</a></td></tr>
+            <tr><td style="text-decoration: line-through">Diagnoses</td></tr>
+            <tr><td><a th:href="@{../hospitalization/view}">Hospitalizations</a></td></tr>
+            <tr><td><a th:href="@{../immunization/view}">Immunizations</a></td></tr>
+            <tr><td><a th:href="@{../medication/view}">Medications</a></td></tr>
+            <tr><td><a th:href="@{../pharmacy/view}">Pharmacy</a></td></tr>
+            <tr><td><a th:href="@{../provider/view}">Providers</a></td></tr>
+            <tr><td style="text-decoration: line-through">Test Results</td></tr>
+            <tr><td style="text-decoration: line-through">Vitals</td></tr>
         </table>
 <!--More to be added for full Logout functionality later-->
-        <button>Logout</button>
+        <button th:action="@{/logout}">Logout</button>
     </div>
     <footer th:fragment="footer">
         MIT License 2023 | Kit Pyles, Christine Dillon, Glapougbae Garmondeh, Katrina Merritt

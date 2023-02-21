@@ -2,32 +2,33 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
     <head th:replace="~{fragments :: head}"></head>
     <body>
-        <div th:replace="~{fragments :: header}"></div>
-        <div th:replace="~{fragments :: sidebar}"></div>
-        <div>
-            <table>
+        <header th:replace="~{fragments :: header}"></header>
+        <div class="body-block" th:replace="~{fragments :: sidebar}"></div>
+        <div class="body-block">
+            <a th:href="@{/hospitalization/add}"><button th:action="new">Create New Record</button></a>
+            <table th:each="hospitalization: ${hospitalizations}">
                 <tr>
                     <th>Reason</th>
                     <th>Facility</th>
                     <th>Treatment</th>
                 </tr>
                 <tr>
-                    <th>Admission Date</th>
-                    <th>Discharge Date</th>
-                    <th>Notes</th>
-                </tr>
-                <tr th:each="hospitalization: ${hospitalizations}">
                     <td th:text="${hospitalization.reason}"></td>
                     <td th:text="${hospitalization.facility}"></td>
                     <td th:text="${hospitalization.treatment}"></td>
                 </tr>
                 <tr>
-                    <td th:text="${hospitalization.admitDate}"></td>
-                    <td th:text="${hospitalization.dischargeDate}"></td>
+                    <th>Admission Date</th>
+                    <th>Discharge Date</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td th:text="${hospitalization.dateOfAdmission}"></td>
+                    <td th:text="${hospitalization.dateOfDischarge}"></td>
                     <td th:text="${hospitalization.notes}"></td>
                 </tr>
             </table>
         </div>
-        <footer th:replace="~{fragments :: footer"></footer>
+        <footer th:replace="~{fragments :: footer}"></footer>
     </body>
 </html>

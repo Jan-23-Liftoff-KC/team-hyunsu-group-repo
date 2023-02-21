@@ -10,3 +10,9 @@ header {
   table th {
     text-align: right;
   }
+
+footer {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

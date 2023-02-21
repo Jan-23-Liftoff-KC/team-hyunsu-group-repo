@@ -12,8 +12,6 @@ import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 @Builder
 @Entity
 public class Notes {
@@ -28,4 +26,20 @@ public class Notes {
     @NotNull
     @Size(max=1000)
     private String contents;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate() {
+        this.date = new Date();
+    }
+
+    public String getContents() {
+        return contents;
+    }
+
+    public void setContents(String contents) {
+        this.contents = contents;
+    }
 }

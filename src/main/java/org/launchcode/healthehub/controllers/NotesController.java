@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.Date;
 
 @Controller
 @RequestMapping("notes")
@@ -24,6 +25,7 @@ public class NotesController {
     
     @GetMapping("add")
     public String showAddNote(Model model) {
+        model.addAttribute("title", "Health eHub: Dashboard");
         model.addAttribute(new Notes());
         model.addAttribute(userRepository.findAll());
         return "notes/add";
@@ -38,4 +40,12 @@ public class NotesController {
         notesRepository.save(newNote);
         return "redirect:";
     }
+
+//    get edit - TODO later
+
+//    post edit - TODO later
+
+//    get delete - TODO later
+
+//    post delete - TODO later
 }
