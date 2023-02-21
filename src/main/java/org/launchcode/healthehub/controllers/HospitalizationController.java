@@ -48,6 +48,7 @@ public class HospitalizationController {
     public String saveHosp(@ModelAttribute @Valid Hospitalization newHosp, Errors errors, Model model) {
 
         if (errors.hasErrors()) {
+            model.addAttribute("message", "There is a problem with your information. Please double check all entries.");
             return "hospitalization/add";
         } else {
             hospRepository.save(newHosp);

@@ -25,7 +25,7 @@
         </div>
         <div class="body-block">
             <h3>Notes</h3>
-            <a href="notes/add.html"><button>Add Note</button></a>
+            <a href="../notes/add.html"><button>Add Note</button></a>
             <table class="zebra">
                 <tr th:each="note : ${notes}">
                     <table>
@@ -38,7 +38,7 @@
                     </table>
                 </tr>
             </table>
-            <a href="notes/edit.html"><button>Edit Note</button></a>
+            <a href="../notes/edit.html"><button>Edit Note</button></a>
         </div>
         <footer th:replace="~{fragments :: footer}"></footer>
     </body>
