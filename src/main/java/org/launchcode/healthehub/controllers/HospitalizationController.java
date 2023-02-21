@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 @Controller
-@Slf4j
+
 @RequestMapping("hospitalization")
 public class HospitalizationController {
 
