@@ -58,9 +58,10 @@ public class PharmacyController {
             return "pharmacy/add";
         } else {
 
-        pharmRepository.save(newPharm);
-        model.addAttribute("message", "Save successful.");
-        return "/pharmacy/add";
+            pharmRepository.save(newPharm);
+            model.addAttribute("message", "Save successful.");
+            return "/pharmacy/add";
+        }
     }
 
 //    get edit - TODO fix later
