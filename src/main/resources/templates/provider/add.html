@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head"></head>
+<body>
+<div th:replace="~{fragments :: header}"></div>
+<div th:replace="~{fragments :: sidebar}"></div>
+<div>
+    <form method="POST">
+        <div class="buttons">
+            <div class="left">
+                <button action="input.html" id="addAnother">Add Another</button>
+            </div>
+            <div class="right">
+                <button action="view.html" id="save">Save</button>
+            </div>
+        </div>
+        <table>
+            <tr>
+                <table>
+                    <tr>
+                        <th>
+                            <label for="firstName">First Name</label>
+                        </th>
+                        <th>
+                            <label for="lastName">Last Name</label>
+                        </th>
+                        <th>
+                            <label for="address">Address</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="firstName" size="33" placeholder="First Name" />
+                        </td>
+                        <td>
+                            <input type="text" id="lastName" size="33" placeholder="Last Name"/>
+                        </td>
+                        <td>
+                            <input type="text" id="address" size="33" placeholder="Address" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="phone">Phone Number</label>
+                        </th>
+                        <th>
+                            <label for="fax">Fax Number</label>
+                        </th>
+                        <th>
+                            <label for="specialty">Provider Specialty</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="phone" size="33" placeholder="Phone Number" />
+                        </td>
+                        <td>
+                            <input type="text" id="fax" size="33" placeholder="Fax Number"/>
+                        </td>
+                        <td>
+                            <input type="text" id="specialty" size="33" placeholder="Provider Specialty" />
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+            <tr>
+                <table>
+                    <tr>
+                        <th>
+                            <label for="notes">Notes</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="notes" size="110" placeholder="Notes" />
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+        </table>
+    </form>
+</div>
+<footer th:replace="~{fragments :: footer"></footer>
+</body>
+</html>
