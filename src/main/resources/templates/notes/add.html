@@ -31,8 +31,9 @@
         <div>
             <h3>Notes</h3>
             <form action="POST">
+                <input type="hidden" th:field="${user.id}" value="3">
                 <label th:for="content">Add Your Note:</label><br>
-<!--                        <textarea th:field="${note.content}" rows="4" cols="50"></textarea><br>-->
+                <textarea th:field="${notes.content}" rows="4" cols="50"></textarea><br>
                 <input type="submit" value="Add Note">
             </form>
             <table class="zebra">

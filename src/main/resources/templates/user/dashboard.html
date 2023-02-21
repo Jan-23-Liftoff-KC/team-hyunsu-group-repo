@@ -6,9 +6,9 @@
         <div class="body-block" th:replace="~{fragments :: sidebar}"></div>
         <div class="body-block">
             <h3>Demographics Data</h3>
-            <table th:each="user : ${users}">
+            <table>
                 <tr>
-                    <th style="text-align: right">Name: </th><td th:text="${user.getFirstName()} + ' ' + ${user.getLastName()}">FirstName LastName</td>
+                    <th style="text-align: right">Name: </th><td th:text="${user.getFirstName() + ' ' + user.getLastName()}">FirstName LastName</td>
                 </tr>
                 <tr>
                     <th style="text-align: right">Date of Birth: </th><td th:text="${user.getDob()}">MM/DD/YYY</td>
@@ -19,13 +19,13 @@
                 <tr>
                     <th style="text-align: right">Email: </th><td th:text="${user.getEmail()}">email@website.com</td>
                 <tr>
-                    <th style="text-align: right">Phone Number: </th><td th:text="${user.getPhoneNumber()}">123-456-7890</td>
+                    <th style="text-align: right">Phone Number: </th><td th:text="${user.getPhone()}">123-456-7890</td>
                 </tr>
             </table>
         </div>
         <div class="body-block">
             <h3>Notes</h3>
-            <a href="../notes/add.html"><button>Add Note</button></a>
+            <a th:href="@{../notes/add}"><button>Add Note</button></a>
             <table class="zebra">
                 <tr th:each="note : ${notes}">
                     <table>
@@ -33,12 +33,12 @@
                             <td th:text="${note.date}">date & time</td>
                         </tr>
                         <tr>
-                            <td th:text="${note.content}">content</td>
+                            <td th:text="${note.contents}">content</td>
                         </tr>
                     </table>
                 </tr>
             </table>
-            <a href="../notes/edit.html"><button>Edit Note</button></a>
+<!--            <a href="../notes/edit.html"><button>Edit Note</button></a>-->
         </div>
         <footer th:replace="~{fragments :: footer}"></footer>
     </body>
