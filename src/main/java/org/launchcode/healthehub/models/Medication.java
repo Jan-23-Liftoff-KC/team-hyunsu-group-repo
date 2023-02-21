@@ -1,25 +1,63 @@
 package org.launchcode.healthehub.models;
 
-import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@Builder
 @Entity
 public class Medication {
 
     @Id
     @GeneratedValue
-    @Setter(AccessLevel.NONE)
     private int id;
 
     private String rxMed;
     private String otcMed;
     private String provider;
     private String useReason;
+
+    public Medication(){};
+
+    public Medication(String rxMed, String otcMed, String provider, String useReason) {
+        this.rxMed = rxMed;
+        this.otcMed = otcMed;
+        this.provider = provider;
+        this.useReason = useReason;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getRxMed() {
+        return rxMed;
+    }
+
+    public void setRxMed(String rxMed) {
+        this.rxMed = rxMed;
+    }
+
+    public String getOtcMed() {
+        return otcMed;
+    }
+
+    public void setOtcMed(String otcMed) {
+        this.otcMed = otcMed;
+    }
+
+    public String getProvider() {
+        return provider;
+    }
+
+    public void setProvider(String provider) {
+        this.provider = provider;
+    }
+
+    public String getUseReason() {
+        return useReason;
+    }
+
+    public void setUseReason(String useReason) {
+        this.useReason = useReason;
+    }
 }

@@ -6,15 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Entity
 public class Hospitalization {
 
     @Id
     @GeneratedValue
-    @Setter(AccessLevel.NONE)
     private int id;
 
     @NotNull
@@ -36,6 +32,18 @@ public class Hospitalization {
     private String dateOfDischarge;
 
     private String notes;
+
+    public Hospitalization(){};
+
+    public Hospitalization(String reason, String facility, String provider, String treatment, String dateOfAdmission, String dateOfDischarge, String notes) {
+        this.reason = reason;
+        this.facility = facility;
+        this.provider = provider;
+        this.treatment = treatment;
+        this.dateOfAdmission = dateOfAdmission;
+        this.dateOfDischarge = dateOfDischarge;
+        this.notes = notes;
+    }
 
     public int getId() {
         return id;
