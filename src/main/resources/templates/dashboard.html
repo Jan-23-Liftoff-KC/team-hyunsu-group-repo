@@ -2,9 +2,9 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
     <head th:replace="~{fragments :: head}"></head>
     <body>
-        <div th:replace="~{fragments :: header}"></div>
-        <div th:replace="~{fragments :: sidebar}"></div>
-        <div>
+        <header th:replace="~{fragments :: header}"></header>
+        <div class="body-block" th:replace="~{fragments :: sidebar}"></div>
+        <div class="body-block">
             <h3>Demographics Data</h3>
             <table>
                 <tr>
@@ -23,7 +23,7 @@
                 </tr>
             </table>
         </div>
-        <div>
+        <div class="body-block">
             <h3>Notes</h3>
             <a href="notes/add.html"><button>Add Note</button></a>
             <table class="zebra">

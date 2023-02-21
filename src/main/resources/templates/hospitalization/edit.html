@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head th:replace="~{fragments :: head"></head>
+<head th:replace="~{fragments :: head}"></head>
 <body>
-    <div th:replace="~{fragments :: header}"></div>
+    <header th:replace="~{fragments :: header}"></header>
     <div th:replace="~{fragments :: sidebar}"></div>
     <div>
         <form method="POST">
-            <div class="buttons">
-                <div class="left">
-                    <button action="input.html" id="addAnother">Add Another</button>
-                </div>
-                <div class="right">
-                    <button action="view.html" id="save">Save</button>
-                </div>
-            </div>
+            <button th:action="save">Save</button>
             <table>
                 <tr>
                     <table>
@@ -52,13 +45,13 @@
                         </tr>
                         <tr>
                             <td>
-                                <input type="text" id="treatment" size="33" placeholder="Treatment" />
+                                <input type="text" id="treatment" size="33" th:value="Treatment" />
                             </td>
                             <td>
-                                <input type="text" id="admitDate" size="33" placeholder="Date of Admission"/>
+                                <input type="date" id="admitDate" size="33" th:value="Date of Admission"/>
                             </td>
                             <td>
-                                <input type="text" id="dischargeDate" size="33" placeholder="Date of Discharge" />
+                                <input type="date" id="dischargeDate" size="33" th:value="Date of Discharge" />
                             </td>
                         </tr>
                     </table>
@@ -80,6 +73,6 @@
             </table>
         </form>
     </div>
-    <footer th:replace="~{fragments :: footer"></footer>
+    <footer th:replace="~{fragments :: footer}"></footer>
 </body>
 </html>

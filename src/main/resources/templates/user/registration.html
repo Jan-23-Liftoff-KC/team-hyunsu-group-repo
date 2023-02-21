@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www/thymeleaf.org/">
-    <head>
-        <meta charset="UTF-8"/>
-        <title>User Registration Form</title>
-        <link th:href="styles.css" rel="stylesheet" />
+    <head th:replace="~{fragments :: head}">
     </head>
     <body>
-        <h1>User Registration Form</h1>
+        <header th:replace="~{fragments :: header}"></header>
         <form method="post" th:object="${user}">
             <div>
                 <label th:for="first_name">First Name: </label>
@@ -54,10 +51,10 @@
     <!--            <p th:each="error: ${#fields.errors('phone')}" th:text="${error}">Validation error</p>-->
             </div>
 
-            <button type="submit" value="Create User" th:text="#{label.form.submit}">Create Account</button>
+            <button th:action="register" value="Create Account">Create Account</button>
         </form>
         <div>
-            <p>Already registered? Click <a href="@{/index.html}">here</a> to login.</p>
+            <p>Already registered? Click <a th:href="@{/}">here</a> to login.</p>
         </div>
         <footer th:replace="~{fragments :: footer}"></footer>
     </body>

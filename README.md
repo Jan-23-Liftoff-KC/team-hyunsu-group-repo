@@ -20,6 +20,7 @@ The intended use for Health eHub is not to compete with provider portals but enh
 * Java 11.0
 * JavaScript 16.17.0
 * Spring Boot 3.0.1
+* Project Lombok 1.18.26
 * Thymeleaf templates 3.1.1
 * HTML 5
 * CSS 3
