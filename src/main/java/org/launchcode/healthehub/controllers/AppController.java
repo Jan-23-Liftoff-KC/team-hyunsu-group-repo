@@ -18,21 +18,8 @@ public class AppController {
     private UserRepository userRepository;
 
     @GetMapping("/")
-    public String viewHomePage(){
-        return "index";
-    }
-    @GetMapping("/user/registration")
-    public String showRegistrationForm(Model model){
-        model.addAttribute("register", new User());
-        return "index";
-    }
-    @PostMapping(value = "/user/registration", params = "register")
-    public String registerNewAccount(@ModelAttribute @Valid User newUser, Errors errors, Model model) {
-        if (errors.hasErrors()) {
-            return "/user/registration";
-        }
-
-        userRepository.save(newUser);
+    public String viewHomePage(Model model){
+        model.addAttribute("title", "Health eHub");
         return "index";
     }
 }

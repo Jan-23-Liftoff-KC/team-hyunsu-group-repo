@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Controller
@@ -26,19 +27,23 @@ public class NotesController {
     @GetMapping("add")
     public String showAddNote(Model model) {
         model.addAttribute("title", "Health eHub: Dashboard");
+        model.addAttribute("user", userRepository.findById(4));
         model.addAttribute(new Notes());
-        model.addAttribute(userRepository.findAll());
         return "notes/add";
     }
     
     @PostMapping("add")
     public String processAddNote(@ModelAttribute @Valid Notes newNote, Errors errors, Model model) {
         if(errors.hasErrors()){
-        return "notes/add";
+            model.addAttribute("message","There is a problem saving your note.");
+            return "notes/add";
+        } else {
+            LocalDate date = LocalDate.now();
+            String strDate = date.toString();
+            newNote.setDate(strDate);
+            notesRepository.save(newNote);
+            return "redirect:../user/dashboard";
         }
-        newNote.setDate();
-        notesRepository.save(newNote);
-        return "redirect:";
     }
 
 //    get edit - TODO later

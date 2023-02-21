@@ -1,12 +1,10 @@
 package org.launchcode.healthehub.models;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 @Entity
 public class Immunization {
@@ -19,10 +17,21 @@ public class Immunization {
     private String name;
     
     @NotNull
-    @DateTimeFormat(pattern = "MM/DD/YYYY")
-    private Date date;
+    private String date;
     private String dosage;
     private String notes;
+
+
+    public Immunization(){
+    };
+
+    public Immunization(String name, String date, String dosage, String notes) {
+        this.name = name;
+        this.date = date;
+        this.dosage = dosage;
+        this.notes = notes;
+    }
+
 
     public int getId() {
         return id;
@@ -35,12 +44,13 @@ public class Immunization {
     public void setName(String name) {
         this.name = name;
     }
-
-    public Date getDate() {
+    
+  public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
+
         this.date = date;
     }
 
