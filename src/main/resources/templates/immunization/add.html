@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<body>
+<header th:replace="~{fragments :: header}"></header>
+<div th:replace="~{fragments :: sidebar}"></div>
+<div>
+    <p th:text="${message}"></p>
+    <form method="POST">
+        <div class="buttons">
+            <div class="left">
+                <input type="submit" name="addAnother" value="Add Another" />
+            </div>
+            <div class="right">
+                <input type="submit" name="save" value="Save" />
+            </div>
+        </div>
+        <table>
+            <tr>
+                <table>
+                    <tr>
+                        <th>
+                            <label for="name">Name</label>
+                        </th>
+                        <th>
+                            <label for="date">Date</label>
+                        </th>
+                        <th>
+                            <label for="dosage">Dosage</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="name" size="33" placeholder="Shot Name" th:field="${immunization.name}" />
+                        </td>
+                        <td>
+                            <input type="text" id="date" size="33" placeholder="Date" th:field="${immunization.date}"/>
+                        </td>
+                        <td>
+                            <input type="text" id="dosage" size="33" placeholder=Dosage" th:field="${immunization.dosage}" />
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+            <tr>
+                <table>
+                    <tr>
+                        <th>
+                            <label th:for="notes">Notes</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="notes" size="110" placeholder="Notes" th:field="${immunization.notes}" />
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+        </table>
+    </form>
+</div>
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package org.launchcode.healthehub.models;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,7 +21,9 @@ public class Immunization {
     private String dosage;
     private String notes;
 
-    public Immunization(){};
+
+    public Immunization(){
+    };
 
     public Immunization(String name, String date, String dosage, String notes) {
         this.name = name;
@@ -28,6 +31,7 @@ public class Immunization {
         this.dosage = dosage;
         this.notes = notes;
     }
+
 
     public int getId() {
         return id;
@@ -40,12 +44,13 @@ public class Immunization {
     public void setName(String name) {
         this.name = name;
     }
-
-    public String getDate() {
+    
+  public String getDate() {
         return date;
     }
 
     public void setDate(String date) {
+
         this.date = date;
     }
 
