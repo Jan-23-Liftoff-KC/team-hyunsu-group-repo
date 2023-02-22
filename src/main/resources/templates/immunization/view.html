@@ -2,25 +2,24 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="~{fragments :: head}"></head>
 <body>
-<header th:replace="~{fragments :: header}"></header>
-<div class="body-block" th:replace="~{fragments :: sidebar}"></div>
-<div class="body-block">
-    <a th:href="@{/immunization/add}"><button th:action="new">Create New Record</button></a>
+    <header th:replace="~{fragments :: header}"></header>
+    <div th:replace="~{fragments :: sidebar}"></div>
     <div>
+        <a th:href="@{/immunization/add}"><button th:action="new">Create New Record</button></a>
         <table  th:each="shot: ${shots}">
-            <tr>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Dosage</th>
-                <th>Notes</th>
-            </tr>
-            <tr>
-                <td th:text="${shot.name}"></td>
-                <td th:text="${shot.date}"></td>
-                <td th:text="${shot.dosage}"></td>
-                <td th:text="${shot.notes}"></td>
-            </tr>
-        </table>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Dosage</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td th:text="${shot.name}"></td>
+                    <td th:text="${shot.date}"></td>
+                    <td th:text="${shot.dosage}"></td>
+                    <td th:text="${shot.notes}"></td>
+                </tr>
+            </table>
     </div>
     <footer th:replace="~{fragments :: footer}"></footer>
 </body>

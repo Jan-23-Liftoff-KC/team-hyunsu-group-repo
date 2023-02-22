@@ -2,10 +2,10 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="~{fragments :: head}"></head>
 <body>
-<div th:replace="~{fragments :: header}"></div>
+<header th:replace="~{fragments :: header}"></header>
 <div th:replace="~{fragments :: sidebar}"></div>
 <div>
-    <a th:href="@{/hospitalization/add}"><button th:action="new">Create New Record</button></a>
+    <a th:href="@{/pharmacy/add}"><button th:action="new">Create New Record</button></a>
     <table th:each="pharmacy : ${pharmacies}">
         <tr>
             <th>Pharmacy</th>
