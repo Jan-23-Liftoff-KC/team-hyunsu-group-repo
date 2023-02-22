@@ -19,7 +19,6 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 @Controller
-
 @RequestMapping("hospitalization")
 public class HospitalizationController {
 
