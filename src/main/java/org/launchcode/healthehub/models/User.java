@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
-public class User {
+public class User  {
     @Id
     @GeneratedValue
     private int id;
