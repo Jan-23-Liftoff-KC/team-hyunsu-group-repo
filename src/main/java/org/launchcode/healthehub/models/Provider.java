@@ -32,6 +32,7 @@ public class Provider {
     @NotNull
     private String website;
 
+    @NotNull
     private String dateStartedCare;
 
     public Provider() {
