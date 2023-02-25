@@ -4,91 +4,94 @@
     </head>
     <body>
         <header th:replace="~{fragments :: header}"></header>
-        <p th:text="${message}"></p>
-        <form method="POST" th:object="${user}">
-            <table>
-                <tr>
-                    <th>
-                        <label th:for="first_name">First Name: </label>
-                    </th>
-                    <td>
-                        <input type="text" id="first_name" placeholder="First name" th:field="*{firstName}" />
-                                            <!--            Removed until we implement Spring Security.
-                    <p th:each="error: ${#fields.errors('firstName')}" th:text="${error}">Validation error</p>-->
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label th:for="last_name">Last Name: </label>
-                    </th>
-                    <td>
-                        <input type="text" id="last_name" placeholder="Last name" th:field="*{lastName}" />
-    <!--            Removed until we implement Spring Security.
-                    <p th:each="error: ${#fields.errors('lastName')}" th:text="${error}">Validation error</p>-->
-                    </td>
-                </tr>
-                <tr>
-                     <th>
-                        <label th:for="email">Email: </label>
-                     </th>
-                    </td>
-                    <td>
-                        <input type="email" id="email" placeholder="Enter email" th:field="*{email}" />
-    <!--            Removed until we implement Spring Security.
-                    <p th:each="error: ${#fields.errors('email')}" th:text="${error}">Validation error</p>-->
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label th:for="password">Password: </label>
-                    </th>
-                    <td>
-                        <input type="password" id="password" placeholder="Enter Password" th:field="*{password}" />
-        <!--        Removed until we implement Spring Security.
-                    <p th:each="error: ${#fields.errors('password')}" th:text="${error}">Validation error</p>-->
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label th:for="verifyPassword">Verify Password: </label>
-                    </th>
-                    <td>
-                        <input type="password" id="verifyPassword" placeholder="Verify Password" th:field="*{verifyPassword}" />
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label th:for="address">Address: </label>
-                    </th>
-                    <td>
-                        <input type="text" id="address" placeholder="Enter address" th:field="*{address}">
-        <!--        Removed until we implement Spring Security.
-                    <p th:each="error: ${#fields.errors('address')}" th:text="${error}">Validation error</p>-->
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label th:for="dob">DOB: </label>
-                    </th>
-                    <td>
-                        <input type="date" id="dob" placeholder="MM/DD/YYYY" th:field="*{dob}">
-        <!--        Removed until we implement Spring Security.
-                    <p th:each="error: ${#fields.errors('dob')}" th:text="${error}">Validation error</p>-->
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <label th:for="phone">Phone: </label>
-                    </th>
-                    <td>
-                        <input type="text" id="phone" placeholder="Enter Phone Number" th:field="*{phone}">
-        <!--            <p th:each="error: ${#fields.errors('phone')}" th:text="${error}">Validation error</p>-->
-                    </td>
-                </tr>
-            </table>
-            <button th:action="register" value="Create Account">Create Account</button>
-        </form>
-        <p>Already registered? Click <a th:href="@{/}">here</a> to login.</p>
+        <div th:replace="~{fragments :: sidebar"}></div>
+        <div>
+            <p th:text="${message}"></p>
+            <form method="POST" th:object="${user}">
+                <table>
+                    <tr>
+                        <th>
+                            <label th:for="first_name">First Name: </label>
+                        </th>
+                        <td>
+                            <input type="text" id="first_name" placeholder="First name" th:field="*{firstName}" />
+                                                <!--            Removed until we implement Spring Security.
+                        <p th:each="error: ${#fields.errors('firstName')}" th:text="${error}">Validation error</p>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label th:for="last_name">Last Name: </label>
+                        </th>
+                        <td>
+                            <input type="text" id="last_name" placeholder="Last name" th:field="*{lastName}" />
+        <!--            Removed until we implement Spring Security.
+                        <p th:each="error: ${#fields.errors('lastName')}" th:text="${error}">Validation error</p>-->
+                        </td>
+                    </tr>
+                    <tr>
+                         <th>
+                            <label th:for="email">Email: </label>
+                         </th>
+                        </td>
+                        <td>
+                            <input type="email" id="email" placeholder="Enter email" th:field="*{email}" />
+        <!--            Removed until we implement Spring Security.
+                        <p th:each="error: ${#fields.errors('email')}" th:text="${error}">Validation error</p>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label th:for="password">Password: </label>
+                        </th>
+                        <td>
+                            <input type="password" id="password" placeholder="Enter Password" th:field="*{password}" />
+            <!--        Removed until we implement Spring Security.
+                        <p th:each="error: ${#fields.errors('password')}" th:text="${error}">Validation error</p>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label th:for="verifyPassword">Verify Password: </label>
+                        </th>
+                        <td>
+                            <input type="password" id="verifyPassword" placeholder="Verify Password" th:field="*{verifyPassword}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label th:for="address">Address: </label>
+                        </th>
+                        <td>
+                            <input type="text" id="address" placeholder="Enter address" th:field="*{address}">
+            <!--        Removed until we implement Spring Security.
+                        <p th:each="error: ${#fields.errors('address')}" th:text="${error}">Validation error</p>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label th:for="dob">DOB: </label>
+                        </th>
+                        <td>
+                            <input type="date" id="dob" placeholder="MM/DD/YYYY" th:field="*{dob}">
+            <!--        Removed until we implement Spring Security.
+                        <p th:each="error: ${#fields.errors('dob')}" th:text="${error}">Validation error</p>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label th:for="phone">Phone: </label>
+                        </th>
+                        <td>
+                            <input type="text" id="phone" placeholder="Enter Phone Number" th:field="*{phone}">
+            <!--            <p th:each="error: ${#fields.errors('phone')}" th:text="${error}">Validation error</p>-->
+                        </td>
+                    </tr>
+                </table>
+                <button th:action="register" value="Create Account">Create Account</button>
+            </form>
+            <p>Already registered? Click <a th:href="@{/}">here</a> to login.</p>
+        </div>
         <footer th:replace="~{fragments :: footer}"></footer>
     </body>
 </html>
