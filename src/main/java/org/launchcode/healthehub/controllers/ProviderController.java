@@ -65,21 +65,21 @@ public class ProviderController {
         return "/provider/add";
     }
 
-    public ProviderRepository getProviderRepository() {
-        return this.providerRepository;
-    }
-
-    public UserRepository getUserRepository() {
-        return this.userRepository;
-    }
-
-    public void setProviderRepository(ProviderRepository providerRepository) {
-        this.providerRepository = providerRepository;
-    }
-
-    public void setUserRepository(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+//    public ProviderRepository getProviderRepository() {
+//        return this.providerRepository;
+//    }
+//
+//    public UserRepository getUserRepository() {
+//        return this.userRepository;
+//    }
+//
+//    public void setProviderRepository(ProviderRepository providerRepository) {
+//        this.providerRepository = providerRepository;
+//    }
+//
+//    public void setUserRepository(UserRepository userRepository) {
+//        this.userRepository = userRepository;
+//    }
 
 
 
