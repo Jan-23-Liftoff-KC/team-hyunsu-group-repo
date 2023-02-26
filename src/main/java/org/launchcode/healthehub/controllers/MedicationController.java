@@ -33,7 +33,7 @@ public class MedicationController {
     }
     //    get add
     @RequestMapping(value = "add", method = RequestMethod.GET)
-    public String showAddHosp(Model model) {
+    public String showAddMedication(Model model) {
         model.addAttribute("title", "Health eHub: Medication");
         model.addAttribute(new Medication());
         return "medication/add";
@@ -41,7 +41,7 @@ public class MedicationController {
     //    post add
     @RequestMapping(value = "add", method = RequestMethod.POST, params ="save")
 //    @PostMapping("add")
-    public String saveHosp(@ModelAttribute @Valid Medication newMedication, Errors errors, Model model) {
+    public String saveMedication(@ModelAttribute @Valid Medication newMedication, Errors errors, Model model) {
 
         if (errors.hasErrors()) {
             model.addAttribute("message", "There is a problem with your information. Please double check all entries.");
@@ -66,11 +66,11 @@ public class MedicationController {
     }
 
 //    get edit - TODO fix later
-//    @GetMapping("edit/{hospId}")
-//    public String showEditHospForm(@PathVariable int medicationId, Model model) {
+//    @GetMapping("edit/{medicaitionId}")
+//    public String showEditMedicationForm(@PathVariable int medicationId, Model model) {
 //       model.addAttribute("title", "Health eHub: Medication");
-//        if (medicationRepository.findById(hospId).isPresent()) {
-//            model.addAttribute("hosp", medicationRepository.findById(medicationId).get());
+//        if (medicationRepository.findById(MedicationId).isPresent()) {
+//            model.addAttribute("medication", medicationRepository.findById(medicationId).get());
 //        }
 //        return "/medication/edit";
 //    }
@@ -80,7 +80,7 @@ public class MedicationController {
 //        if (result.hasErrors()) {
 //            return "/medication/edit";
 //        } else {
-//            hospRepository.save(medication);
+//            medicationRepository.save(medication);
 //            return "/medication/view";
 //        }
 //    }
