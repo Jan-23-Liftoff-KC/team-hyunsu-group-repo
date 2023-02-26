@@ -25,7 +25,7 @@ public class ImmunizationController {
     @RequestMapping(value = "view", method = RequestMethod.GET)
     public String getShotView(Model model) {
         model.addAttribute("title", "Health eHub: Immunization");
-        model.addAttribute("immunization", shotRepository.findAll());
+        model.addAttribute("immunizations", shotRepository.findAll());
         return "immunization/view";
     }
     //    get add
@@ -43,7 +43,7 @@ public class ImmunizationController {
             return "immunization/add";
         } else {
             shotRepository.save(newShot);
-            return "/immunization/view";
+            return "immunization/view";
         }
     }
 
