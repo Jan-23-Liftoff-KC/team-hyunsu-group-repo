@@ -34,7 +34,7 @@ public class ProviderController {
     //    get add
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String showAddProvider(Model model) {
-        model.addAttribute("title", "Health eHub: Hospitalization");
+        model.addAttribute("title", "Health eHub: Provider");
         model.addAttribute(new Provider());
         return "provider/add";
     }
