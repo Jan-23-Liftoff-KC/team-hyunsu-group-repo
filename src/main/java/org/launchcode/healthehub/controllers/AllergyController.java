@@ -16,7 +16,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 @Controller
-@RequestMapping("Allergy")
+@RequestMapping("allergy")
 public class AllergyController {
 
     @Autowired
@@ -26,26 +26,26 @@ public class AllergyController {
 
     //    get view
     @RequestMapping(value = "view", method = RequestMethod.GET)
-    public String getHospView(Model model) {
+    public String getAllergyView(Model model) {
         model.addAttribute("title", "Health eHub: Allergy");
         model.addAttribute("allergy", allergyRepository.findAll());
-        return "allergy/view";
+        return "/allergy/view";
     }
     //    get add
     @RequestMapping(value = "add", method = RequestMethod.GET)
-    public String showAddHosp(Model model) {
+    public String showAddAllergy(Model model) {
         model.addAttribute("title", "Health eHub: Allergy");
         model.addAttribute(new Allergy());
-        return "allergy/add";
+        return "/allergy/add";
     }
     //    post add
     @RequestMapping(value = "add", method = RequestMethod.POST, params ="save")
 //    @PostMapping("add")
-    public String saveHosp(@ModelAttribute @Valid Allergy newAllergy, Errors errors, Model model) {
+    public String saveAllergy(@ModelAttribute @Valid Allergy newAllergy, Errors errors, Model model) {
 
         if (errors.hasErrors()) {
             model.addAttribute("message", "There is a problem with your information. Please double check all entries.");
-            return "allergy/add";
+            return "/allergy/add";
         } else {
             allergyRepository.save(newAllergy);
             return "/allergy/view";
@@ -53,35 +53,35 @@ public class AllergyController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST, params = "addAnother")
-    public String addAnotherHosp(@ModelAttribute @Valid Allergy newAllergy, Errors errors, Model model, HttpServletRequest request) {
+    public String addAnotherAllergy(@ModelAttribute @Valid Allergy newAllergy, Errors errors, Model model, HttpServletRequest request) {
 
         if (errors.hasErrors()) {
             model.addAttribute("message", "There is a problem with your information. Please double check all entries.");
-            return "allergy/add";
+            return "/allergy/add";
         }
 
-        hospRepository.save(newHosp);
+        allergyRepository.save(newAllergy);
         model.addAttribute("message", "Save successful.");
         return "/allergy/add";
     }
 
 //    get edit - TODO fix later
-//    @GetMapping("edit/{hospId}")
-//    public String showEditHospForm(@PathVariable int hospId, Model model) {
-//       model.addAttribute("title", "Health eHub: Hospitalization");
-//        if (hospRepository.findById(hospId).isPresent()) {
-//            model.addAttribute("hosp", hospRepository.findById(hospId).get());
+//    @GetMapping("edit/{allergyId}")
+//    public String showEditAllergyForm(@PathVariable int allergyId, Model model) {
+//       model.addAttribute("title", "Health eHub: Allergy");
+//        if (hospRepository.findById(allergyId).isPresent()) {
+//            model.addAttribute("allergy", allergyRepository.findById(hospId).get());
 //        }
-//        return "/hospitalization/edit";
+//        return "/allergy/edit";
 //    }
 //    post edit - TODO fix later
 //    @PostMapping("edit")
-//    public String processEditHospForm(@Valid Hospitalization hospitalization, BindingResult result) {
+//    public String processEditAllergyForm(@Valid Allergy allergy, BindingResult result) {
 //        if (result.hasErrors()) {
-//            return "/hospitalization/edit";
+//            return "/allergy/edit";
 //        } else {
 //            hospRepository.save(hospitalization);
-//            return "/hospitalization/view";
+//            return "/allergy/view";
 //        }
 //    }
 //    get delete - TODO later
