@@ -9,11 +9,11 @@
     <form method="POST">
         <table>
             <tr>
-                <td style="text-align: left">
-                    <input type="submit" width="50" name="addAnother" value="Add Another" />
+                <td style="text-align: left; width: 350px">
+                    <input type="submit" name="addAnother" value="Add Another" />
                 </td>
-                <td style="text-align: right">
-                    <input type="submit" width="50" name="save" value="Save" />
+                <td style="text-align: right; width: 350px">
+                    <input type="submit" name="save" value="Save" />
                 </td>
             </tr>
         </table>
@@ -80,10 +80,6 @@
                             <input type="date" id="dateStartedCare" size="33" placeholder="Date of start of care" th:field="${provider.dateStartedCare}"/>
                         </td>
                     </tr>
-                </table>
-            </tr>
-            <tr>
-                <table>
                     <tr>
                         <th>
                             <label th:for="notes">Notes</label>
@@ -91,7 +87,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" id="notes" size="110" placeholder="Notes" th:field="${provider.notes}" />
+                            <input type="text" id="notes" size="110" placeholder="Notes" th:field="${provider.notes}"/>
                         </td>
                     </tr>
                 </table>
