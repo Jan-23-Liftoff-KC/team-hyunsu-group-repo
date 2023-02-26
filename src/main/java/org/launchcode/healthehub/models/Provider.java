@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Provider {
 
+
     @Id
     @GeneratedValue
     private int id;
@@ -32,12 +33,16 @@ public class Provider {
     @NotNull
     private String website;
 
+    @NotNull
     private String dateStartedCare;
+
+
+    private String notes;
 
     public Provider() {
     }
 
-    public Provider(String firstName, String lastName, String address, String phone, String fax, String specialty, String website, String dateStartedCare) {
+    public Provider(String firstName, String lastName, String address, String phone, String fax, String specialty, String website, String dateStartedCare, String notes) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -46,6 +51,7 @@ public class Provider {
         this.specialty = specialty;
         this.website = website;
         this.dateStartedCare = dateStartedCare;
+        this.notes = notes;
     }
 
     public int getId() {
@@ -115,4 +121,13 @@ public class Provider {
     public void setDateStartedCare(String dateStartedCare) {
         this.dateStartedCare = dateStartedCare;
     }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
 }
