@@ -46,5 +46,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .deleteCookies("JSESSIONID", "remember-me")
             .logoutSuccessUrl("index");
     }
-
 }

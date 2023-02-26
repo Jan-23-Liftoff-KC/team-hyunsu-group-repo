@@ -1,15 +1,16 @@
 package org.launchcode.healthehub.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
-public class User  {
+public class User implements UserDetails {
     @Id
     @GeneratedValue
     private int id;
@@ -38,6 +39,18 @@ public class User  {
     
     @NotNull
     private  String address;
+
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean isAccountNonExpired;
+
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean isAccountNonLocked;
+
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean isCredentialsNonExpired;
+
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean isEnabled;
     
     @OneToMany
     private List<Notes> notes;
@@ -63,7 +76,12 @@ public class User  {
     public User() {
     }
 
-    public User(String firstName, String lastName, String dob, String email, String password, String phone, String address) {
+    public User(String firstName, String lastName,
+                String dob,
+                String email, String password,
+                String phone, String address,
+                boolean isAccountNonExpired, boolean isAccountNonLocked,
+                boolean isCredentialsNonExpired, boolean isEnabled) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
@@ -71,6 +89,10 @@ public class User  {
         this.password = password;
         this.phone = phone;
         this.address = address;
+        this.isAccountNonExpired = isAccountNonExpired;
+        this.isAccountNonLocked = isAccountNonLocked;
+        this.isCredentialsNonExpired = isCredentialsNonExpired;
+        this.isEnabled = isEnabled;
     }
 
     public int getId() {
@@ -109,8 +131,38 @@ public class User  {
         this.email = email;
     }
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return null;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
     }
 
     public void setPassword(String password) {
