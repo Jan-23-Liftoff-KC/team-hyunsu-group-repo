@@ -20,7 +20,7 @@ import java.time.LocalDate;
 public class AllergyController {
 
     @Autowired
-    AllergyRepository AllergyRepository;
+    AllergyRepository allergyRepository;
     @Autowired
     UserRepository userRepository;
 
