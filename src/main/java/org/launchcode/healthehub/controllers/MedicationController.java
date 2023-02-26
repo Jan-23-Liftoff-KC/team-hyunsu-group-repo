@@ -29,14 +29,14 @@ public class MedicationController {
     public String getMedicationView(Model model) {
         model.addAttribute("title", "Health eHub: Medication");
         model.addAttribute("medication", medicationRepository.findAll());
-        return "medication/view";
+        return "/medication/view";
     }
     //    get add
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String showAddMedication(Model model) {
         model.addAttribute("title", "Health eHub: Medication");
         model.addAttribute(new Medication());
-        return "medication/add";
+        return "/medication/add";
     }
     //    post add
     @RequestMapping(value = "add", method = RequestMethod.POST, params ="save")
@@ -57,10 +57,10 @@ public class MedicationController {
 
         if (errors.hasErrors()) {
             model.addAttribute("message", "There is a problem with your information. Please double check all entries.");
-            return "medication/add";
+            return "/medication/add";
         }
 
-        MedicationRepository.save(newMedication);
+        medicationRepository.save(newMedication);
         model.addAttribute("message", "Save successful.");
         return "/medication/add";
     }
