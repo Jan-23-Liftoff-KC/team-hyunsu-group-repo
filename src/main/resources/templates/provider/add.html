@@ -69,7 +69,10 @@
                             <label th:for="website">Website</label>
                         </th>
                         <th>
-                            <label th:for="dateStartedCare">Date of start of care</label>
+                            <label th:for="dateStartedCare">Date Started Care</label>
+                        </th>
+                        <th>
+                            <label th:for="notes">Notes</label>
                         </th>
                     </tr>
                     <tr>
@@ -77,17 +80,10 @@
                             <input type="text" id="website" size="33" placeholder="Website" th:field="${provider.website}" />
                         </td>
                         <td>
-                            <input type="date" id="dateStartedCare" size="33" placeholder="Date of start of care" th:field="${provider.dateStartedCare}"/>
+                            <input type="date" id="dateStartedCare" size="33" placeholder="Date Started Care" th:field="${provider.dateStartedCare}"/>
                         </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <label th:for="notes">Notes</label>
-                        </th>
-                    </tr>
-                    <tr>
                         <td>
-                            <input type="text" id="notes" size="110" placeholder="Notes" th:field="${provider.notes}"/>
+                            <input type="text" id="notes" placeholder="Notes" th:field="${provider.notes}"/>
                         </td>
                     </tr>
                 </table>

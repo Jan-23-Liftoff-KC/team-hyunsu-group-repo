@@ -8,29 +8,23 @@
     <a th:href="@{/provider/add}"><button th:action="new">Create New Record</button></a>
     <table th:each="provider: ${providers}">
         <tr>
-            <th>Reason</th>
-            <th>Facility</th>
-            <th>Treatment</th>
+            <th>Name</th>
+            <th>Specialty</th>
+            <th>Address</th>
         </tr>
         <tr>
-            <td th:text="${provider.firstName}"></td>
-            <td th:text="${provider.lastName}"></td>
+            <td th:text="${provider.firstName} + ' ' + ${provider.lastName}"></td>
+            <td th:text="${provider.specialty}"></td>
             <td th:text="${provider.address}"></td>
         </tr>
         <tr>
             <th>Phone Number</th>
             <th>Fax</th>
-            <th>Specialty</th>
+            <th>Notes</th>
         </tr>
         <tr>
             <td th:text="${provider.phone}"></td>
             <td th:text="${provider.fax}"></td>
-            <td th:text="${provider.specialty}"></td>
-        </tr>
-        <tr>
-            <th>Notes</th>
-        </tr>
-        <tr>
             <td th:text="${provider.notes}"></td>
         </tr>
     </table>

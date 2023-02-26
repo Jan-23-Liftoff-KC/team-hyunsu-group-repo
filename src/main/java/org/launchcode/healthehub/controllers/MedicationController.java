@@ -28,15 +28,15 @@ public class MedicationController {
     @RequestMapping(value = "view", method = RequestMethod.GET)
     public String getMedicationView(Model model) {
         model.addAttribute("title", "Health eHub: Medication");
-        model.addAttribute("medication", medicationRepository.findAll());
-        return "/medication/view";
+        model.addAttribute("medications", medicationRepository.findAll());
+        return "medication/view";
     }
     //    get add
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String showAddMedication(Model model) {
         model.addAttribute("title", "Health eHub: Medication");
         model.addAttribute(new Medication());
-        return "/medication/add";
+        return "medication/add";
     }
     //    post add
     @RequestMapping(value = "add", method = RequestMethod.POST, params ="save")
@@ -48,7 +48,7 @@ public class MedicationController {
             return "medication/add";
         } else {
             medicationRepository.save(newMedication);
-            return "/medication/view";
+            return "medication/view";
         }
     }
 
@@ -57,31 +57,31 @@ public class MedicationController {
 
         if (errors.hasErrors()) {
             model.addAttribute("message", "There is a problem with your information. Please double check all entries.");
-            return "/medication/add";
+            return "medication/add";
         }
 
         medicationRepository.save(newMedication);
         model.addAttribute("message", "Save successful.");
-        return "/medication/add";
+        return "medication/add";
     }
 
 //    get edit - TODO fix later
-//    @GetMapping("edit/{medicaitionId}")
+//    @GetMapping("edit/{medicationId}")
 //    public String showEditMedicationForm(@PathVariable int medicationId, Model model) {
 //       model.addAttribute("title", "Health eHub: Medication");
 //        if (medicationRepository.findById(MedicationId).isPresent()) {
 //            model.addAttribute("medication", medicationRepository.findById(medicationId).get());
 //        }
-//        return "/medication/edit";
+//        return "medication/edit";
 //    }
 //    post edit - TODO fix later
 //    @PostMapping("edit")
 //    public String processEditMedicationForm(@Valid Medication medication, BindingResult result) {
 //        if (result.hasErrors()) {
-//            return "/medication/edit";
+//            return "medication/edit";
 //        } else {
 //            medicationRepository.save(medication);
-//            return "/medication/view";
+//            return "medication/view";
 //        }
 //    }
 //    get delete - TODO later
