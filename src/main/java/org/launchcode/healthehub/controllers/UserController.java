@@ -34,7 +34,7 @@ public class UserController {
             return "/user/registration";
         } else {
             userRepository.save(newUser);
-            int userId = newUser.getUserId();
+            int userId = newUser.getId();
             return "/user/dashboard";
         }
     }

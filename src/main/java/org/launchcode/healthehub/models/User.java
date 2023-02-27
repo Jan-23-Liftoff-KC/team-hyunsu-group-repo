@@ -1,18 +1,18 @@
 package org.launchcode.healthehub.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import org.launchcode.healthehub.security.auth.Role;
+
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class User {
     @Id
     @GeneratedValue
-    private int userId;
+    private int id;
     
     @NotNull
     private String firstName;
@@ -26,6 +26,8 @@ public class User {
     @NotNull
     @Email
     private String email;
+
+    private String username;
     
     @NotNull
     private String password;
@@ -39,42 +41,63 @@ public class User {
     @NotNull
     private  String address;
 
-    @OneToMany(mappedBy = "user")
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean isAccountNonExpired = true;
+
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean isAccountNonLocked = true;
+
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean isCredentialsNonExpired = true;
+
+    @Column(nullable = false, columnDefinition = "TINYINT(1)")
+    private boolean isEnabled = true;
+
+    @ManyToMany(cascade = CascadeType.MERGE)
+    private Set<Role> roles;
+
+    @OneToMany
     private List<Allergy> allergies;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany
     private List<Hospitalization> hospitalizations;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany
     private List<Immunization> immunizations;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany
     private List<Medication> medications;
 
-    @OneToMany(mappedBy = "user")
-    private List<Note> notes;
+    @OneToMany
+    private List<NoteBROKEN> notes;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany
     private List<Pharmacy> pharmacies;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany
     private List<Provider> providers;
 
     public User() {
     }
 
-    public User(String firstName, String lastName, String dob, String email, String password, String phone, String address) {
+    public User(String firstName, String lastName, String dob, String email, String username, String password, String phone, String address,
+                boolean isAccountNonExpired, boolean isAccountNonLocked, boolean isCredentialsNonExpired, boolean isEnabled) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
         this.email = email;
+        this.username = username;
         this.password = password;
         this.phone = phone;
         this.address = address;
+        this.isAccountNonExpired = isAccountNonExpired;
+        this.isAccountNonLocked = isAccountNonLocked;
+        this.isCredentialsNonExpired = isCredentialsNonExpired;
+        this.isEnabled = isEnabled;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getId() {
+        return id;
     }
 
     public String getFirstName() {
@@ -109,6 +132,14 @@ public class User {
         this.email = email;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -139,5 +170,45 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public boolean isAccountNonExpired() {
+        return isAccountNonExpired;
+    }
+
+    public void setAccountNonExpired(boolean accountNonExpired) {
+        this.isAccountNonExpired = accountNonExpired;
+    }
+
+    public boolean isAccountNonLocked() {
+        return isAccountNonLocked;
+    }
+
+    public void setAccountNonLocked(boolean accountNonLocked) {
+        isAccountNonLocked = accountNonLocked;
+    }
+
+    public boolean isCredentialsNonExpired() {
+        return isCredentialsNonExpired;
+    }
+
+    public void setCredentialsNonExpired(boolean credentialsNonExpired) {
+        isCredentialsNonExpired = credentialsNonExpired;
+    }
+
+    public boolean isEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
     }
 }

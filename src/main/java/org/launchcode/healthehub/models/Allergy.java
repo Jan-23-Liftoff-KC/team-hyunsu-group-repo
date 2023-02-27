@@ -8,7 +8,7 @@ public class Allergy {
 
     @Id
     @GeneratedValue
-    private int allergyId;
+    private int id;
 
     private String medAllergy;
 
@@ -17,7 +17,7 @@ public class Allergy {
     private String rxnComment;
 
     @ManyToOne
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Allergy(){};
@@ -29,8 +29,8 @@ public class Allergy {
         this.user = user;
     }
 
-    public int getAllergyId() {
-        return allergyId;
+    public int getId() {
+        return id;
     }
 
     public String getMedAllergy() {
@@ -55,13 +55,5 @@ public class Allergy {
 
     public void setRxnComment(String rxnComment) {
         this.rxnComment = rxnComment;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

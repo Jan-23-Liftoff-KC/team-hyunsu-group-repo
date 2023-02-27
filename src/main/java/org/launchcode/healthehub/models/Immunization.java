@@ -16,25 +16,18 @@ public class Immunization {
     
     @NotNull
     private String date;
-
     private String dosage;
     private String notes;
-
-    @ManyToOne
-    @JoinColumn(name = "userId")
-    private User user;
-
 
 
     public Immunization(){
     };
 
-    public Immunization(String name, String date, String dosage, String notes, User user) {
+    public Immunization(String name, String date, String dosage, String notes) {
         this.name = name;
         this.date = date;
         this.dosage = dosage;
         this.notes = notes;
-        this.user = user;
     }
 
 
@@ -73,14 +66,6 @@ public class Immunization {
 
     public void setNotes(String notes) {
         this.notes = notes;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }
 

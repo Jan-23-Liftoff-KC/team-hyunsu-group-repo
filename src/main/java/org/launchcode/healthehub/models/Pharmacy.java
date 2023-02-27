@@ -24,20 +24,15 @@ public class Pharmacy {
     
     private String notes;
 
-    @ManyToOne
-    @JoinColumn(name = "userId")
-    private User user;
-
     public Pharmacy() {
     }
 
-    public Pharmacy(String name, String phone, String fax, String address, String notes, User user) {
+    public Pharmacy(String name, String phone, String fax, String address, String notes) {
         this.name = name;
         this.phone = phone;
         this.fax = fax;
         this.address = address;
         this.notes = notes;
-        this.user = user;
     }
 
     public int getId() {
@@ -82,13 +77,5 @@ public class Pharmacy {
 
     public void setNotes(String notes) {
         this.notes = notes;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

@@ -1,30 +1,28 @@
 package org.launchcode.healthehub.models;
 
-// created by kp on 2/27/2023
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
-public class Note {
+public class NoteBROKEN {
 
     @Id
     @GeneratedValue
     private int id;
 
+    @NotNull
     private String date;
 
+    @NotNull
+    @Size(max=1000)
     private String contents;
 
-    public Note(){}
+    public NoteBROKEN(){};
 
-    public Note(String contents) {
+    public NoteBROKEN(String date, String contents, User user) {
+        this.date = date;
         this.contents = contents;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getDate() {

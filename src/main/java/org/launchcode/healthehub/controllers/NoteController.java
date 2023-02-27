@@ -1,6 +1,6 @@
 package org.launchcode.healthehub.controllers;
 
-import org.launchcode.healthehub.models.Note;
+import org.launchcode.healthehub.models.NoteBROKEN;
 import org.launchcode.healthehub.models.data.NoteRepository;
 import org.launchcode.healthehub.models.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.time.LocalDate;
 
 @Controller
 @RequestMapping("notes")
-public class NotesController {
+public class NoteController {
     @Autowired
     private NoteRepository noteRepository;
     @Autowired
@@ -27,12 +27,12 @@ public class NotesController {
     public String showAddNote(Model model) {
         model.addAttribute("title", "Health eHub: Dashboard");
         model.addAttribute("user", userRepository.findById(4));
-        model.addAttribute(new Note());
+        model.addAttribute(new NoteBROKEN());
         return "notes/add";
     }
     
     @PostMapping("add")
-    public String processAddNote(@ModelAttribute @Valid Note newNote, Errors errors, Model model) {
+    public String processAddNote(@ModelAttribute @Valid NoteBROKEN newNote, Errors errors, Model model) {
         if(errors.hasErrors()){
             model.addAttribute("message","There is a problem saving your note.");
             return "notes/add";

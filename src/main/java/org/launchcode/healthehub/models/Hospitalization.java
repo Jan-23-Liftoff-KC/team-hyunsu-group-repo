@@ -1,8 +1,8 @@
 package org.launchcode.healthehub.models;
 
-import lombok.*;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -32,14 +32,9 @@ public class Hospitalization {
 
     private String notes;
 
-    @ManyToOne
-    @JoinColumn(name = "userId")
-    private User user;
-
     public Hospitalization(){};
 
-    public Hospitalization(String reason, String facility, String provider, String treatment, String dateOfAdmission,
-                           String dateOfDischarge, String notes, User user) {
+    public Hospitalization(String reason, String facility, String provider, String treatment, String dateOfAdmission, String dateOfDischarge, String notes) {
         this.reason = reason;
         this.facility = facility;
         this.provider = provider;
@@ -47,7 +42,6 @@ public class Hospitalization {
         this.dateOfAdmission = dateOfAdmission;
         this.dateOfDischarge = dateOfDischarge;
         this.notes = notes;
-        this.user = user;
     }
 
     public int getId() {
@@ -108,13 +102,5 @@ public class Hospitalization {
 
     public void setNotes(String notes) {
         this.notes = notes;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

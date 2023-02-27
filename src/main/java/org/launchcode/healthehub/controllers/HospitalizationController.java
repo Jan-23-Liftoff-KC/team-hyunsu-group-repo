@@ -2,7 +2,6 @@ package org.launchcode.healthehub.controllers;
 
 // created by kp on 2/20/2023
 
-import lombok.extern.slf4j.Slf4j;
 import org.launchcode.healthehub.models.Hospitalization;
 import org.launchcode.healthehub.models.data.HospitalizationRepository;
 import org.launchcode.healthehub.models.data.UserRepository;
@@ -11,12 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 
 @Controller
 @RequestMapping("hospitalization")
