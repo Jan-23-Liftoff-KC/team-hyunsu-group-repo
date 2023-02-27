@@ -1,7 +1,7 @@
 package org.launchcode.healthehub.controllers;
 
 import org.launchcode.healthehub.models.User;
-import org.launchcode.healthehub.models.data.NotesRepository;
+import org.launchcode.healthehub.models.data.NoteRepository;
 import org.launchcode.healthehub.models.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ public class UserController {
     private UserRepository userRepository;
 
     @Autowired
-    private NotesRepository notesRepository;
+    private NoteRepository noteRepository;
 
     @GetMapping("registration")
     public String showRegistrationForm(Model model){
@@ -34,7 +34,7 @@ public class UserController {
             return "/user/registration";
         } else {
             userRepository.save(newUser);
-            int userId = newUser.getId();
+            int userId = newUser.getUserId();
             return "/user/dashboard";
         }
     }
@@ -46,7 +46,7 @@ public class UserController {
         if (optUser.isPresent()) {
             User user = (User) optUser.get();
             model.addAttribute("user", user);
-            model.addAttribute("notes", notesRepository.findAll());
+            model.addAttribute("notes", noteRepository.findAll());
             return "/user/dashboard";
         } else {
             return "redirect:../";

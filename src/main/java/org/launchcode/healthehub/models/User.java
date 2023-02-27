@@ -12,7 +12,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue
-    private int id;
+    private int userId;
     
     @NotNull
     private String firstName;
@@ -38,26 +38,26 @@ public class User {
     
     @NotNull
     private  String address;
-    
-    @OneToMany
-    private List<Notes> notes;
-    
-    @OneToMany
-    private List<Immunization> immunizations;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Allergy> allergies;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Hospitalization> hospitalizations;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
+    private List<Immunization> immunizations;
+
+    @OneToMany(mappedBy = "user")
     private List<Medication> medications;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
+    private List<Note> notes;
+
+    @OneToMany(mappedBy = "user")
     private List<Pharmacy> pharmacies;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Provider> providers;
 
     public User() {
@@ -73,8 +73,8 @@ public class User {
         this.address = address;
     }
 
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
     public String getFirstName() {

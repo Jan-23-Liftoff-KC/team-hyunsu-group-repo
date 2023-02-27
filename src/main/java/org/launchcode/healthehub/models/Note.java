@@ -1,30 +1,37 @@
 package org.launchcode.healthehub.models;
 
-import org.springframework.format.annotation.DateTimeFormat;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Notes {
+public class Note {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int noteId;
 
     @NotNull
     private String date;
+
     @NotNull
     @Size(max=1000)
     private String contents;
 
-    public Notes(){};
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
 
-    public Notes(String date, String contents) {
+    public Note(){};
+
+    public Note(String date, String contents, User user) {
         this.date = date;
         this.contents = contents;
+        this.user = user;
+    }
+
+    public int getNoteId() {
+        return noteId;
     }
 
     public String getDate() {
@@ -41,5 +48,13 @@ public class Notes {
 
     public void setContents(String contents) {
         this.contents = contents;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

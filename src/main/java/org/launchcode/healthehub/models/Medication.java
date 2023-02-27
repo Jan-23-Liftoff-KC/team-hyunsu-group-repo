@@ -1,8 +1,6 @@
 package org.launchcode.healthehub.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Medication {
@@ -17,14 +15,19 @@ public class Medication {
     private String useReason;
     private String notes;
 
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
+
     public Medication(){};
 
-    public Medication(String rxMed, String otcMed, String provider, String useReason, String notes) {
+    public Medication(String rxMed, String otcMed, String provider, String useReason, String notes, User user) {
         this.rxMed = rxMed;
         this.otcMed = otcMed;
         this.provider = provider;
         this.useReason = useReason;
         this.notes = notes;
+        this.user = user;
     }
 
     public int getId() {
@@ -67,5 +70,13 @@ public class Medication {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

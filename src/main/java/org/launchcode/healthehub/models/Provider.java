@@ -1,13 +1,10 @@
 package org.launchcode.healthehub.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
 public class Provider {
-
 
     @Id
     @GeneratedValue
@@ -36,13 +33,17 @@ public class Provider {
     @NotNull
     private String dateStartedCare;
 
-
     private String notes;
+
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
 
     public Provider() {
     }
 
-    public Provider(String firstName, String lastName, String address, String phone, String fax, String specialty, String website, String dateStartedCare, String notes) {
+    public Provider(String firstName, String lastName, String address, String phone, String fax, String specialty,
+                    String website, String dateStartedCare, String notes, User user) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -52,6 +53,7 @@ public class Provider {
         this.website = website;
         this.dateStartedCare = dateStartedCare;
         this.notes = notes;
+        this.user = user;
     }
 
     public int getId() {
@@ -130,4 +132,11 @@ public class Provider {
         this.notes = notes;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
