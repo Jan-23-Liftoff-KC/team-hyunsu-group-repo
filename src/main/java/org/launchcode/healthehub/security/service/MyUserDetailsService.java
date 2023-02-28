@@ -5,6 +5,10 @@ package org.launchcode.healthehub.security.service;
 import org.launchcode.healthehub.models.User;
 import org.launchcode.healthehub.security.auth.Role;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -43,4 +47,6 @@ public class MyUserDetailsService implements UserDetailsService {
     private UserDetails buildUserForAuthentication(User user, List<GrantedAuthority> authorities) {
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),user.isAccountNonExpired(), user.isAccountNonLocked(),user.isCredentialsNonExpired(), user.isEnabled(), authorities);
     }
+
+
 }

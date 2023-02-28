@@ -3,6 +3,7 @@ package org.launchcode.healthehub.controllers;
 import org.launchcode.healthehub.models.User;
 import org.launchcode.healthehub.models.data.NoteRepository;
 import org.launchcode.healthehub.models.data.UserRepository;
+import org.launchcode.healthehub.security.service.MyUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +18,8 @@ import java.util.Optional;
 public class UserController {
     @Autowired
     private UserRepository userRepository;
+
+    private MyUserService myUserService;
 
     @Autowired
     private NoteRepository noteRepository;
@@ -39,8 +42,8 @@ public class UserController {
         }
     }
 
-    @GetMapping("dashboard/{userId}")
-    public String viewDashboard(@PathVariable int userId, Model model) {
+    @GetMapping("dashboard")
+    public String viewDashboard(Model model) {
         model.addAttribute("title", "Health eHub");
         Optional<User> optUser = userRepository.findById(4);
         if (optUser.isPresent()) {

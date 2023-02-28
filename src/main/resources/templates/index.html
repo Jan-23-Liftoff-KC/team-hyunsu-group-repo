@@ -3,17 +3,16 @@
     <head th:replace="~{fragments :: head}"></head>
     <body>
         <header th:replace="~{fragments :: header}"></header>
-        <div style="width: 20%"th:replace="~{fragments :: sidebar}"></div>
-        <div style="width: 40%">
+        <div style="width: 60%">
             Health eHub is a universal health record created for YOU! It's not a patient portal. It's not tied to a doctor's office or hospital. It's an app for you to gather all of <b>your</b> health information in one secure place, regardless of changing doctors, moving, or traveling.<br>
             Your health data is yours. And, we feel that you should have possession of it. Please login to the right to access your secure account.
         </div>
         <div style="text-align: center">
-            <form method="post" action="login">
+            <form method="post" th:action="login">
                 <label th:for="username">Username: </label>
-                <input type="text" placeholder="Email address" name="username"><br>
+                <input type="text" name="username"><br>
                 <label th:for="password">Password: </label>
-                <input type="password" placeholder="Enter Password" name="password"><br>
+                <input type="password" name="password"><br>
                 <button>Sign in</button>
             </form>
             <p>Not signed up yet? <a th:href="@{/user/registration}">Register Here.</a></p>

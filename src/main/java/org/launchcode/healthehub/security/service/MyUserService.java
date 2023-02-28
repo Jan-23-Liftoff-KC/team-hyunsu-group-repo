@@ -7,6 +7,7 @@ import org.launchcode.healthehub.models.data.UserRepository;
 import org.launchcode.healthehub.models.data.security.RoleRepository;
 import org.launchcode.healthehub.security.auth.Role;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -16,12 +17,12 @@ public class MyUserService {
 
     private UserRepository userRepository;
     private RoleRepository roleRepository;
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private PasswordEncoder passwordEncoder;
 
-    public MyUserService (UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public MyUserService (UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public User findUserByEmail(String email) {
@@ -33,8 +34,9 @@ public class MyUserService {
     }
 
     public User saveUser(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode("password"));
-        Role userRole = roleRepository.findByRole("ADMIN");
+        String encodeMe = user.getPassword();
+        user.setPassword(passwordEncoder.encode(encodeMe));
+        Role userRole = roleRepository.findByRole("USER");
         user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
         return userRepository.save(user);
     }
