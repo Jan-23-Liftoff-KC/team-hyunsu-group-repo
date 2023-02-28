@@ -6,16 +6,16 @@
 <div class="body-block" th:replace="~{fragments :: sidebar}"></div>
 <div class="body-block">
     <a th:href="@{add}"><button th:action="new">Create New Record</button></a>
-    <table th:each="allergy: ${allergy}">
+    <table th:each="allergy: ${allergies}">
         <tr>
             <th>Rx Allergy</th>
             <th>Other Allergy</th>
             <th>Reaction/Notes</th>
         </tr>
         <tr>
-            <td th:text="${allergy.rxAllergy}"></td>
-            <td th:text="${allergy.otherAllergy}"></td>
-            <td th:text="${allergy.reactionNotes}"></td>
+            <td th:text="${allergy.medAllergy}"></td>
+            <td th:text="${allergy.othAllergy}"></td>
+            <td th:text="${allergy.rxnComment}"></td>
         </tr>
     </table>
 </div>
