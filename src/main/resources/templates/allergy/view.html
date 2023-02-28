@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-    <head th:replace="~{fragments :: head}"></head>
-    <body>
-        <header th:replace="~{fragments :: header}"></header>
-        <div th:replace="~{fragments :: sidebar}"></div>
-        <div>
-            content to be added
-        </div>
-        <footer th:replace="~{fragments :: footer}"></footer>
-    </body>
+<head th:replace="~{fragments :: head}"></head>
+<body>
+<header th:replace="~{fragments :: header}"></header>
+<div class="body-block" th:replace="~{fragments :: sidebar}"></div>
+<div class="body-block">
+    <a th:href="@{add}"><button th:action="new">Create New Record</button></a>
+    <table th:each="allergy: ${allergy}">
+        <tr>
+            <th>Rx Allergy</th>
+            <th>Other Allergy</th>
+            <th>Reaction/Notes</th>
+        </tr>
+        <tr>
+            <td th:text="${allergy.rxAllergy}"></td>
+            <td th:text="${allergy.otherAllergy}"></td>
+            <td th:text="${allergy.reactionNotes}"></td>
+        </tr>
+    </table>
+</div>
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
 </html>
