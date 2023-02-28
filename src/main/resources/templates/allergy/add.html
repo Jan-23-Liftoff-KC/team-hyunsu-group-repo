@@ -22,24 +22,24 @@
         <table>
           <tr>
             <th>
-              <label for="rxMed">Rx Allergies</label>
+              <label for="medAllergy">Rx Allergies</label>
             </th>
             <th>
-              <label for="otcMed">Other Allergies</label>
+              <label for="othAllergy">Other Allergies</label>
             </th>
             <th>
-              <label for="provider">Reaction/Notes</label>
+              <label for="rxnComment">Reaction/Notes</label>
             </th>
           </tr>
           <tr>
             <td>
-              <input type="text" id="rxAllergy" size="33" placeholder="Prescription name" th:field="${allergy.rxAllergy}" />
+              <input type="text" id="medAllergy" size="33" placeholder="Prescription name" th:field="${allergy.medAllergy}" />
             </td>
             <td>
-              <input type="text" id="otherAllergy" size="33" placeholder="Allergies" th:field="${allergy.otherAllergy}"/>
+              <input type="text" id="othAllergy" size="33" placeholder="Allergies" th:field="${allergy.othAllergy}"/>
             </td>
             <td>
-              <input type="text" id="reactionNotes" size="33" placeholder="Reaction/Notes" th:field="${allergy.reactionNotes}" />
+              <input type="text" id="rxnComment" size="33" placeholder="Reaction/Notes" th:field="${allergy.rxnComment}" />
             </td>
           </tr>
         </table>
