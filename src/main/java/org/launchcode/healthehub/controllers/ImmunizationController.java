@@ -40,6 +40,7 @@ public class ImmunizationController {
     public String saveShot(@ModelAttribute @Valid Immunization newShot, Errors errors, Model model) {
 
         if (errors.hasErrors()) {
+            model.addAttribute("message", "There is a problem with your information. Please double check all entries.");
             return "immunization/add";
         } else {
             shotRepository.save(newShot);

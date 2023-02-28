@@ -30,10 +30,15 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" id="name" placeholder="Shot Name" th:field="${immunization.name}" />
+
+                            <input type="text" id="name" size="33" placeholder="Shot Name" th:field="${immunization.name}" />
                         </td>
                         <td>
-                            <input type="date" id="date" placeholder="Date" th:field="${immunization.date}"/>
+                            <input type="date" id="date" size="33" placeholder="Date" th:field="${immunization.date}"/>
+                        </td>
+                        <td>
+                            <input type="text" id="dosage" size="33" placeholder="Dosage" th:field="${immunization.dosage}" />
+
                         </td>
                     </tr>
                 </table>
