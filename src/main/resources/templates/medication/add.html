@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<body>
+<header th:replace="~{fragments :: header}"></header>
+<div th:replace="~{fragments :: sidebar}"></div>
+<div>
+    <p th:text="${message}"></p>
+    <form method="POST">
+        <table>
+            <tr>
+                <td style="text-align: left">
+                    <input type="submit" width="350" name="addAnother" value="Add Another" />
+                </td>
+                <td style="text-align: right">
+                    <input type="submit" width="350" name="save" value="Save" />
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <table>
+                    <tr>
+                        <th>
+                            <label for="rxMed">Prescriptions_testing</label>
+                        </th>
+                        <th>
+                            <label for="otcMed">Over-the-counter</label>
+                        </th>
+                        <th>
+                            <label for="provider">Prescribing Doctor</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="rxMed" size="33" placeholder="Prescription name" th:field="${medication.rxMed}" />
+                        </td>
+                        <td>
+                            <input type="text" id="otcMed" size="33" placeholder="Over-the-counter medications" th:field="${medication.otcMed}"/>
+                        </td>
+                        <td>
+                            <input type="text" id="provider" size="33" placeholder="Prescribing doctor" th:field="${medication.provider}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label th:for="reason">Reason</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="reason" size="33" placeholder="Reason" th:field="${medication.useReason}" />
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+            <tr>
+                <table>
+                    <tr>
+                        <th>
+                            <label th:for="notes">Notes</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="notes" size="110" placeholder="Notes" th:field="${medication.notes}" />
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+        </table>
+    </form>
+    <div id="no_sleep">testing</div>
+</div>
+<footer th:replace="~{fragments :: footer}"></footer>
+<script type="text/javascript" src="./medication_js_api/medicationAPI.js" async/>
+</body>
+</html>

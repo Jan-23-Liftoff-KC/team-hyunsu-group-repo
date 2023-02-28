@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<body>
+<header th:replace="~{fragments :: header}"></header>
+<div th:replace="~{fragments :: sidebar}"></div>
+<div>
+    <p th:text="${message}"></p>
+    <form method="POST">
+        <table>
+            <tr>
+                <td style="text-align: left; width: 350px">
+                    <input type="submit" name="addAnother" value="Add Another" />
+                </td>
+                <td style="text-align: right; width: 350px">
+                    <input type="submit" name="save" value="Save" />
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <table>
+                    <tr>
+                        <th>
+                            <label for="firstName">First Name</label>
+                        </th>
+                        <th>
+                            <label for="lastName">Last Name</label>
+                        </th>
+                        <th>
+                            <label for="address">Address</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="firstName" size="33" placeholder="First Name" th:field="${provider.firstName}" />
+                        </td>
+                        <td>
+                            <input type="text" id="lastName" size="33" placeholder="Last Name" th:field="${provider.lastName}"/>
+                        </td>
+                        <td>
+                            <input type="text" id="address" size="33" placeholder="Provider" th:field="${provider.address}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label th:for="phone">Phone Number</label>
+                        </th>
+                        <th>
+                            <label th:for="fax">Fax</label>
+                        </th>
+                        <th>
+                            <label th:for="specialty">Provider Specialty</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="phone" size="33" placeholder="Phone" th:field="${provider.phone}" />
+                        </td>
+                        <td>
+                            <input type="text" id="fax" size="33" placeholder="Fax" th:field="${provider.fax}"/>
+                        </td>
+                        <td>
+                            <input type="text" id="specialty" size="33" placeholder="Provider Specialty" th:field="${provider.specialty}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label th:for="website">Website</label>
+                        </th>
+                        <th>
+                            <label th:for="dateStartedCare">Date Started Care</label>
+                        </th>
+                        <th>
+                            <label th:for="notes">Notes</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="website" size="33" placeholder="Website" th:field="${provider.website}" />
+                        </td>
+                        <td>
+                            <input type="date" id="dateStartedCare" size="33" placeholder="Date Started Care" th:field="${provider.dateStartedCare}"/>
+                        </td>
+                        <td>
+                            <input type="text" id="notes" placeholder="Notes" th:field="${provider.notes}"/>
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+        </table>
+    </form>
+</div>
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
+</html>

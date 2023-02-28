@@ -44,7 +44,7 @@ public class ImmunizationController {
             return "immunization/add";
         } else {
             shotRepository.save(newShot);
-            return "/immunization/view";
+            return "immunization/view";
         }
     }
 

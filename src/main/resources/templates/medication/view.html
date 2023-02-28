@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+    <body>
+        <header th:replace="~{fragments :: header}"></header>
+        <div class="body-block" th:replace="~{fragments :: sidebar}"></div>
+        <div class="body-block">
+            <a th:href="@{add}"><button th:action="new">Create New Record</button></a>
+            <table th:each="medication: ${medications}">
+                <tr>
+                    <th>Prescription</th>
+                    <th>Over-The-Counter</th>
+                    <th>Prescribing doctor</th>
+                </tr>
+                <tr>
+                    <td th:text="${medication.rxMed}"></td>
+                    <td th:text="${medication.otcMed}"></td>
+                    <td th:text="${medication.provider}"></td>
+                </tr>
+                <tr>
+                    <th>Reason for use</th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td th:text="${medication.useReason}"></td>
+                    <td th:text="${medication.notes}"></td>
+                </tr>
+            </table>
+        </div>
+        <footer th:replace="~{fragments :: footer}"></footer>
+    </body>
+</html>

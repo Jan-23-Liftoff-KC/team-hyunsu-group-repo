@@ -15,14 +15,16 @@ public class Medication {
     private String otcMed;
     private String provider;
     private String useReason;
+    private String notes;
 
     public Medication(){};
 
-    public Medication(String rxMed, String otcMed, String provider, String useReason) {
+    public Medication(String rxMed, String otcMed, String provider, String useReason, String notes) {
         this.rxMed = rxMed;
         this.otcMed = otcMed;
         this.provider = provider;
         this.useReason = useReason;
+        this.notes = notes;
     }
 
     public int getId() {
@@ -59,5 +61,11 @@ public class Medication {
 
     public void setUseReason(String useReason) {
         this.useReason = useReason;
+    }
+
+    public String getNotes() {return notes;}
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 }

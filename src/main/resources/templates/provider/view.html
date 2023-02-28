@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<body>
+<header th:replace="~{fragments :: header}"></header>
+<div class="body-block" th:replace="~{fragments :: sidebar}"></div>
+<div class="body-block">
+    <a th:href="@{/provider/add}"><button th:action="new">Create New Record</button></a>
+    <table th:each="provider: ${providers}">
+        <tr>
+            <th>Name</th>
+            <th>Specialty</th>
+            <th>Address</th>
+        </tr>
+        <tr>
+            <td th:text="${provider.firstName} + ' ' + ${provider.lastName}"></td>
+            <td th:text="${provider.specialty}"></td>
+            <td th:text="${provider.address}"></td>
+        </tr>
+        <tr>
+            <th>Phone Number</th>
+            <th>Fax</th>
+            <th>Notes</th>
+        </tr>
+        <tr>
+            <td th:text="${provider.phone}"></td>
+            <td th:text="${provider.fax}"></td>
+            <td th:text="${provider.notes}"></td>
+        </tr>
+    </table>
+</div>
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
+</html>

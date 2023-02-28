@@ -58,7 +58,7 @@ public class User {
     private List<Pharmacy> pharmacies;
 
     @OneToMany
-    private List<Notes> providers;
+    private List<Provider> providers;
 
     public User() {
     }
