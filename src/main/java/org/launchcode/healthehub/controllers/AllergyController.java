@@ -8,12 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 
 @Controller
 @RequestMapping("allergy")
@@ -28,7 +24,7 @@ public class AllergyController {
     @RequestMapping(value = "view", method = RequestMethod.GET)
     public String getAllergyView(Model model) {
         model.addAttribute("title", "Health eHub: Allergy");
-        model.addAttribute("allergy", allergyRepository.findAll());
+        model.addAttribute("allergies", allergyRepository.findAll());
         return "/allergy/view";
     }
     //    get add
