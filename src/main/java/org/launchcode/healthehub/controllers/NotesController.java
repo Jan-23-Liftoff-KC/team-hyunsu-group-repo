@@ -24,27 +24,7 @@ public class NotesController {
     @Autowired
     private UserRepository userRepository;
     
-    @GetMapping("add")
-    public String showAddNote(Model model) {
-        model.addAttribute("title", "Health eHub: Dashboard");
-        model.addAttribute("user", userRepository.findById(4));
-        model.addAttribute(new Notes());
-        return "notes/add";
-    }
-    
-    @PostMapping("add")
-    public String processAddNote(@ModelAttribute @Valid Notes newNote, Errors errors, Model model) {
-        if(errors.hasErrors()){
-            model.addAttribute("message","There is a problem saving your note.");
-            return "notes/add";
-        } else {
-            LocalDate date = LocalDate.now();
-            String strDate = date.toString();
-            newNote.setDate(strDate);
-            notesRepository.save(newNote);
-            return "redirect:../user/dashboard";
-        }
-    }
+
 
 //    get edit - TODO later
 

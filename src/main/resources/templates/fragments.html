@@ -14,43 +14,39 @@
     </style>
 </head>
 <body>
-<header th:fragment="header">
-    <table>
-        <tr>
-            <td>
-                <img src="/media/logo.png" alt="Health eHub logo showing two stylized people embracing each other. One with a lighter skin tone, one with a darker skin tone." height="100px">
-            </td>
-            <td>
-                <h1>Health eHub</h1>
-                <h2>For the Health of It!</h2>
-            </td>
-        </tr>
-    </table>
-</header>
-<div th:fragment="sidebar">
-    <!--        <p th:text ="'Hello, ' + ${user.getFirstName()}"></p>-->
-    <!--Table entries to be updated as links as we build the appropriate views.-->
-    <ul class="sidebar">
-        <li><a th:href="@{../user/dashboard/4}">Dashboard</a></li>
-        <li><a th:href="@{../allergy/view}">Allergies</a></li>
-<!--        <tr><td style="text-decoration: line-through">Diagnoses</td></tr>-->
-        <li><a th:href="@{../hospitalization/view}">Hospitalizations</a></li>
-        <li><a th:href="@{../immunization/view}">Immunizations</a></li>
-        <li><a th:href="@{../medication/view}">Medications</a></li>
-        <li><a th:href="@{../pharmacy/view}">Pharmacies</a></li>
-        <li><a th:href="@{../provider/view}">Providers</a></li>
-<!--        <tr><td style="text-decoration: line-through">Test Results</td></tr>-->
-<!--        <tr><td style="text-decoration: line-through">Vitals</td></tr>-->
-    </ul>
-
-    <!--More to be added for full Logout functionality later-->
-</div>
-<div th:fragment="button">
-    <button th:class="button" th:action="@{/logout}">Logout</button>
-</div>
-
-<footer th:fragment="footer">
-    MIT License 2023 | Kit Pyles, Christine Dillon, Katrina Merritt, Glapougbae Garmondeh
-</footer>
+    <header th:fragment="header">
+        <table>
+            <tr>
+                <td>
+                    <img src="/media/logo.png" alt="abstract image of two people embracing" height="100px">
+                </td>
+                <td>
+                    <h1>Health eHub</h1>
+                    <h2>For the Health of It!</h2>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <div th:fragment="sidebar" class="sidebar">
+<!--        <p th:text ="'Hello, ' + ${user.getFirstName()}"></p>-->
+<!--Table entries to be updated as links as we build the appropriate views.-->
+        <ul>
+            <li><a th:href="@{/../user/dashboard/4}">Dashboard</a></li>
+            <li><a th:href="@{/../allergy/view}">Allergies</a></li>
+            <!--        <tr><td style="text-decoration: line-through">Diagnoses</td></tr>-->
+            <li><a th:href="@{/../hospitalization/view}">Hospitalizations</a></li>
+            <li><a th:href="@{/../immunization/view}">Immunizations</a></li>
+            <li><a th:href="@{/../medication/view}">Medications</a></li>
+            <li><a th:href="@{/../pharmacy/view}">Pharmacies</a></li>
+            <li><a th:href="@{/../provider/view}">Providers</a></li>
+            <!--        <tr><td style="text-decoration: line-through">Test Results</td></tr>-->
+            <!--        <tr><td style="text-decoration: line-through">Vitals</td></tr>-->
+        </ul>
+<!--More to be added for full Logout functionality later-->
+        <button th:action="@{/logout}">Logout</button>
+    </div>
+    <footer th:fragment="footer">
+        MIT License 2023 | Kit Pyles, Christine Dillon, Katrina Merritt, Glapougbae Garmondeh
+    </footer>
 </body>
 </html>
