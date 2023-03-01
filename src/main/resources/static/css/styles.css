@@ -39,5 +39,8 @@ li a {
 li a:hover {
   background: rgba(23,186,83,1);
  background: linear-gradient(90deg, rgba(4,170,109,1) 46%, rgba(14,80,152,1) 94%);
+}
 
+.zebra:nth-child(even) {
+    background-color: #E7EDF9;
 }

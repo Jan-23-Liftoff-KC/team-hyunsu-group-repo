@@ -6,7 +6,7 @@
 <div class="body-block" th:replace="~{fragments :: sidebar}"></div>
 <div class="body-block">
     <a th:href="@{add}"><button th:action="new">Create New Record</button></a>
-    <table th:each="allergy: ${allergies}">
+    <table th:each="allergy: ${allergies}" class="zebra">
         <tr>
             <th>Rx Allergy</th>
             <th>Other Allergy</th>
