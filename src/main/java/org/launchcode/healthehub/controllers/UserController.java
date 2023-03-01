@@ -1,6 +1,6 @@
 package org.launchcode.healthehub.controllers;
 
-import org.launchcode.healthehub.models.Notes;
+import org.launchcode.healthehub.models.Note;
 import org.launchcode.healthehub.models.User;
 import org.launchcode.healthehub.models.data.NotesRepository;
 import org.launchcode.healthehub.models.data.UserRepository;
@@ -41,8 +41,8 @@ public class UserController {
         }
     }
 
-    @GetMapping("dashboard/{userId}")
-    public String viewDashboard(@PathVariable int userId, Model model) {
+    @GetMapping("dashboard")
+    public String viewDashboard(Model model) {
         model.addAttribute("title", "Health eHub");
         Optional<User> optUser = userRepository.findById(4);
         if (optUser.isPresent()) {
@@ -60,12 +60,12 @@ public class UserController {
         model.addAttribute("title", "Health eHub: Dashboard");
         model.addAttribute("user", userRepository.findById(4));
         model.addAttribute("notes",notesRepository.findAll());
-        model.addAttribute(new Notes());
+        model.addAttribute(new Note());
         return "user/addNote";
     }
 
     @PostMapping("addNote")
-    public String processAddNote(@ModelAttribute @Valid Notes newNote, Errors errors, Model model) {
+    public String processAddNote(@ModelAttribute @Valid Note newNote, Errors errors, Model model) {
         model.addAttribute("user", userRepository.findById(4));
         model.addAttribute("notes", notesRepository.findAll());
         if(errors.hasErrors()){

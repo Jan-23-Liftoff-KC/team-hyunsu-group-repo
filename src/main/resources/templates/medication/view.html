@@ -3,10 +3,10 @@
 <head th:replace="~{fragments :: head}"></head>
     <body>
         <header th:replace="~{fragments :: header}"></header>
-        <div class="body-block" th:replace="~{fragments :: sidebar}"></div>
-        <div class="body-block">
+        <div th:replace="~{fragments :: sidebar}"></div>
+        <div>
             <a th:href="@{add}"><button th:action="new">Create New Record</button></a>
-            <table th:each="medication: ${medications}">
+            <table th:each="medication: ${medications}" class="zebra">
                 <tr>
                     <th>Prescription</th>
                     <th>Over-The-Counter</th>

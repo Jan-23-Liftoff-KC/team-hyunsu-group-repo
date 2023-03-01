@@ -14,6 +14,8 @@
                 <input type="text" placeholder="Email address" name="username"><br>
                 <label th:for="password">Password: </label>
                 <input type="password" placeholder="Enter Password" name="password"><br>
+                Remember me?<br>
+                <input type="checkbox" id="remember-me" name="remember-me" class="form-control" /><br>
                 <button>Sign in</button>
             </form>
             <p>Not signed up yet? <a th:href="@{/user/registration}"><button>Register Here</button></a></p>

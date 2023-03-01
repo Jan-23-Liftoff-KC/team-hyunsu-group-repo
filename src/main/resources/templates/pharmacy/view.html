@@ -6,7 +6,7 @@
 <div th:replace="~{fragments :: sidebar}"></div>
 <div>
     <a th:href="@{/pharmacy/add}"><button th:action="new">Create New Record</button></a>
-    <table th:each="pharmacy : ${pharmacies}">
+    <table th:each="pharmacy : ${pharmacies}" class="zebra">
         <tr>
             <th>Pharmacy</th>
             <th>Address</th>

@@ -40,7 +40,7 @@ public class User {
     private  String address;
     
     @OneToMany
-    private List<Notes> notes;
+    private List<Note> notes;
     
     @OneToMany
     private List<Immunization> immunizations;

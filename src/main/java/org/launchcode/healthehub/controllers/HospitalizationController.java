@@ -51,7 +51,7 @@ public class HospitalizationController {
             return "hospitalization/add";
         } else {
             hospRepository.save(newHosp);
-            return "/hospitalization/view";
+            return "redirect:/hospitalization/view";
         }
     }
 
@@ -65,7 +65,7 @@ public class HospitalizationController {
 
         hospRepository.save(newHosp);
         model.addAttribute("message", "Save successful.");
-        return "/hospitalization/add";
+        return "redirect:/hospitalization/add";
     }
 
 //    get edit - TODO fix later
