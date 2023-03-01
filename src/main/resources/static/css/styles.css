@@ -3,7 +3,7 @@ body {
 }
 
 .sidebar {
-    background: rgba(23,186,83,1);
+    background: rgba(14,80,152,1);
     text-align: center;
     margin: 0;
 }
@@ -23,22 +23,17 @@ footer {
 
 button a {
     display: block;
-    color: #000;
+    color: white;
     padding: 8px 16px;
     text-decoration: none;
 }
 
 /* Change the link color on focus*/
 button a:active {
-    background: rgba(23, 186, 83, 1);
-    color: white;
+    background-color: rgba(23, 186, 83, 1);
+    color: black;
 }
 
 .zebra:nth-child(even) {
     background-color: #E7EDF9;
-}
-
-button a:focus{
-    background: rgba(14,80,152,1);
-    color: black;
 }
