@@ -23,23 +23,23 @@
                 </tr>
             </table>
         </div>
-        <div>
-            <h3>Notes</h3>
-            <a th:href="@{../addNote}"><button>Add Note</button></a>
-            <table class="zebra">
-                <tr th:each="note : ${notes}">
-                    <table>
-                        <tr>
-                            <td th:text="${note.date}">date & time</td>
-                        </tr>
-                        <tr>
-                            <td th:text="${note.contents}">content</td>
-                        </tr>
-                    </table>
-                </tr>
-            </table>
-<!--            <a href="../notes/edit.html"><button>Edit Note</button></a>-->
-        </div>
+<!--        <div>-->
+<!--            <h3>Notes</h3>-->
+<!--&lt;!&ndash;            <a th:href="@{/user/addNote}"><button>Add Note</button></a>&ndash;&gt;-->
+<!--            <table class="zebra">-->
+<!--                <tr th:each="note : ${notes}">-->
+<!--                    <table>-->
+<!--                        <tr>-->
+<!--                            <td th:text="${note.date}">date & time</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td th:text="${note.contents}">content</td>-->
+<!--                        </tr>-->
+<!--                    </table>-->
+<!--                </tr>-->
+<!--            </table>-->
+<!--&lt;!&ndash;            <a href="../notes/edit.html"><button>Edit Note</button></a>&ndash;&gt;-->
+<!--        </div>-->
         <footer th:replace="~{fragments :: footer}"></footer>
     </body>
 </html>

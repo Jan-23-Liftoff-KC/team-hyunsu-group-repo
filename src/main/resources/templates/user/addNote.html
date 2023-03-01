@@ -9,22 +9,22 @@
             <table>
                 <tr>
                     <th style="text-align: right">Name: </th>
-<!--                        <td th:text="${user.getFirstName()} + ' ' ${user.getLastName()}">FirstName LastName</td>-->
+                        <td th:text="${user.getFirstName()} + ' ' ${user.getLastName()}">FirstName LastName</td>
                 </tr>
                 <tr>
                     <th style="text-align: right">Date of Birth: </th>
-<!--                        <td th:text="${user.getDob()}">MM/DD/YYY</td>-->
+                        <td th:text="${user.getDob()}">MM/DD/YYY</td>
                 </tr>
                 <tr>
                     <th style="text-align: right">Address: </th>
-<!--                        <td th:text="${user.getAddress()}">123 Street, City, ST zipcode</td>-->
+                        <td th:text="${user.getAddress()}">123 Street, City, ST zipcode</td>
                 </tr>
                 <tr>
                     <th style="text-align: right">Email: </th>
-<!--                        <td th:text="${user.getEmail()}">email@website.com</td>-->
+                        <td th:text="${user.getEmail()}">email@website.com</td>
                 <tr>
                     <th style="text-align: right">Phone Number: </th>
-<!--                    <td th:text="${user.getPhoneNumber()}">123-456-7890</td>-->
+                    <td th:text="${user.getPhoneNumber()}">123-456-7890</td>
                 </tr>
             </table>
         </div>
@@ -43,7 +43,7 @@
                 </table>
 <!--                <input type="hidden" th:field="${user.id}" value="3">-->
                 <label th:for="content">Add Your Note:</label><br>
-                <textarea th:field="${notes.contents}" rows="4" cols="50"></textarea>
+                <textarea th:field="${note.contents}" rows="4" cols="50"></textarea>
             </form>
             <table class="zebra">
                 <tr th:each="note : ${notes}">
