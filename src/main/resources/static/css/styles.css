@@ -17,9 +17,8 @@ footer {
    background: rgb(4,170,109);
   background: linear-gradient(90deg, rgba(4,170,109,1) 46%, rgba(14,80,152,1) 94%);
 }
-table {
-    text-align: center;
-    margin: 0;
+table th{
+    text-align: right;
 }
 tr:nth-child(even) {
   background-color: #f2f2f2;
