@@ -30,18 +30,17 @@
     <div th:fragment="sidebar" class="sidebar">
 <!--        <p th:text ="'Hello, ' + ${user.getFirstName()}"></p>-->
 <!--Table entries to be updated as links as we build the appropriate views.-->
-        <ul>
-            <li><a th:href="@{/../user/dashboard}">Dashboard</a></li>
-            <li><a th:href="@{/../allergy/view}">Allergies</a></li>
+            <button style="display: block; font-family: Poppins, sans-serif"><a th:href="@{/../user/dashboard/4}">Dashboard</a></button>
+            <button style="display: block; font-family: Poppins, sans-serif"><a th:href="@{/../allergy/view}">Allergies</a></button>
             <!--        <tr><td style="text-decoration: line-through">Diagnoses</td></tr>-->
-            <li><a th:href="@{/../hospitalization/view}">Hospitalizations</a></li>
-            <li><a th:href="@{/../immunization/view}">Immunizations</a></li>
-            <li><a th:href="@{/../medication/view}">Medications</a></li>
-            <li><a th:href="@{/../pharmacy/view}">Pharmacies</a></li>
-            <li><a th:href="@{/../provider/view}">Providers</a></li>
+            <button style="display: block; font-family: Poppins, sans-serif"><a th:href="@{/../hospitalization/view}">Hospitalizations</a></button>
+            <button style="display: block; font-family: Poppins, sans-serif"><a th:href="@{/../immunization/view}">Immunizations</a></button>
+            <button style="display: block; font-family: Poppins, sans-serif"><a th:href="@{/../medication/view}">Medications</a></button>
+            <button style="display: block; font-family: Poppins, sans-serif"><a th:href="@{/../pharmacy/view}">Pharmacies</a></button>
+            <button style="display: block; font-family: Poppins, sans-serif"><a th:href="@{/../provider/view}">Providers</a></button>
             <!--        <tr><td style="text-decoration: line-through">Test Results</td></tr>-->
             <!--        <tr><td style="text-decoration: line-through">Vitals</td></tr>-->
-        </ul>
+
 <!--More to be added for full Logout functionality later-->
         <button th:action="@{/logout}">Logout</button>
     </div>
