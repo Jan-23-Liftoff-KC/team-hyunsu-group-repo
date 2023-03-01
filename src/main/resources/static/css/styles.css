@@ -1,38 +1,31 @@
 body {
     font-family: Poppins, sans-serif;
+}
 
-    background-color: beige;
-
-
+.sidebar {
+    background: rgba(23,186,83,1);
+    text-align: center;
+    margin: 0;
 }
 
 header {
+    background: radial-gradient(circle, rgba(23,186,83,1) 0%, rgba(14,80,152,1) 100%);
     margin: 0;
     padding: 0;
-      background: rgb(4,170,109);
-     background: linear-gradient(90deg, rgba(4,170,109,1) 46%, rgba(14,80,152,1) 94%);
 }
-
-  table th {
-    text-align: right;
-  }
 
 footer {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-
-     background: rgb(4,170,109);
-    background: linear-gradient(90deg, rgba(4,170,109,1) 46%, rgba(14,80,152,1) 94%);
-
-
+    background: radial-gradient(circle, rgba(23,186,83,1) 0%, rgba(14,80,152,1) 100%);
 }
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #f1f1f1;
 }
 
 li a {
@@ -44,7 +37,7 @@ li a {
 
 /* Change the link color on hover */
 li a:hover {
-  background: rgb(4,170,109);
+  background: rgba(23,186,83,1);
  background: linear-gradient(90deg, rgba(4,170,109,1) 46%, rgba(14,80,152,1) 94%);
 
 }
