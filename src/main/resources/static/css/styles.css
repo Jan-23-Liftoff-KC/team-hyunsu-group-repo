@@ -48,5 +48,5 @@ li a:hover {
                   background: radial-gradient(circle, rgba(14,80,152,1) 0%, rgba(23,186,83,1) 100%);
 }
 button {
-align: under;
+align: left;
 }
