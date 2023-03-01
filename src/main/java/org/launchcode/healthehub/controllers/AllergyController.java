@@ -44,7 +44,7 @@ public class AllergyController {
             return "/allergy/add";
         } else {
             allergyRepository.save(newAllergy);
-            return "/allergy/view";
+            return "redirect:/allergy/view";
         }
     }
 
@@ -58,7 +58,7 @@ public class AllergyController {
 
         allergyRepository.save(newAllergy);
         model.addAttribute("message", "Save successful.");
-        return "/allergy/add";
+        return "redirect:/allergy/add";
     }
 
 //    get edit - TODO fix later

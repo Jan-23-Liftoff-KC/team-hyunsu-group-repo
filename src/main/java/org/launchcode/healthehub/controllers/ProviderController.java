@@ -48,7 +48,7 @@ public class ProviderController {
             return "provider/add";
         } else {
             providerRepository.save(newProvider);
-            return "/provider/view";
+            return "redirect:/provider/view";
         }
     }
 
@@ -62,7 +62,7 @@ public class ProviderController {
 
         providerRepository.save(newProvider);
         model.addAttribute("message", "Save successful.");
-        return "/provider/add";
+        return "redirect:/provider/add";
     }
 
 //    public ProviderRepository getProviderRepository() {

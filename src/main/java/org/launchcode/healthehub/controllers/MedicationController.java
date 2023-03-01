@@ -48,7 +48,7 @@ public class MedicationController {
             return "medication/add";
         } else {
             medicationRepository.save(newMedication);
-            return "medication/view";
+            return "redirect:/medication/view";
         }
     }
 
@@ -62,7 +62,7 @@ public class MedicationController {
 
         medicationRepository.save(newMedication);
         model.addAttribute("message", "Save successful.");
-        return "medication/add";
+        return "redirect:/medication/add";
     }
 
 //    get edit - TODO fix later

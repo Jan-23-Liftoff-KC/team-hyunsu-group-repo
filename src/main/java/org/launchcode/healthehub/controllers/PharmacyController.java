@@ -46,7 +46,7 @@ public class PharmacyController {
             return "pharmacy/add";
         } else {
             pharmRepository.save(newPharm);
-            return "/pharmacy/view";
+            return "redirect:/pharmacy/view";
         }
     }
 
@@ -60,7 +60,7 @@ public class PharmacyController {
 
             pharmRepository.save(newPharm);
             model.addAttribute("message", "Save successful.");
-            return "/pharmacy/add";
+            return "redirect:/pharmacy/add";
         }
     }
 
